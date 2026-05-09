@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qurbani Token - Institute of Islamic Sciences, Islamabad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-background">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="image/logo.svg" alt="Institute Logo">
+                <h1>Institute of Islamic Sciences, Islamabad</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="order.html">Book Qurbani</a>
+                <a href="skin.html">Skin Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="token-section">
+            <h2>Qurbani Token</h2>
+            <div class="token-details">
+                <p><strong>Tracking ID:</strong> <span id="tracking-id"></span></p>
+                <p><strong>Order By:</strong> <span id="order-by"></span></p>
+            </div>
+
+            <h3>Bank Payment Details</h3>
+            <div class="payment-details-grid">
+                <div class="bank-accounts" id="bank-accounts"></div>
+                <div class="receipt-whatsapp-box">
+                    <strong>Send receipt on WhatsApp</strong>
+                    <p>After bank transfer, send your payment receipt with your tracking ID so we can confirm your booking.</p>
+                    <a href="#" id="receipt-whatsapp-btn" class="whatsapp-btn">Send Receipt on WhatsApp</a>
+                </div>
+            </div>
+
+            <p><strong>Important:</strong> Your booking will be confirmed only after we receive the bank receipt and complete details.</p>
+
+            <p>After transferring the amount, please share your payment receipt on WhatsApp: <a href="#" id="whatsapp-link">0336 5363 550</a></p>
+
+            <h3>Order Summary</h3>
+            <div id="token-order-summary">
+                <!-- Order summary table will be inserted here -->
+            </div>
+
+            <div class="cta-buttons">
+                <button id="download-btn" class="btn-download">Download Token</button>
+                <button id="print-btn" class="btn-print">Print Token</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Institute of Islamic Sciences, Islamabad</p>
+            <p>Address: Institute of Islamic Sciences, Islamabad, Wadi-e-ilm, Toll Plaza, Main Murree Rd, Islamabad, Pakistan</p>
+            <p>Contact: 0336 5363 550 | 0321 5821 083</p>
+            <span class="footer-links"><a href="terms.html">Terms & Conditions</a> | <a href="privacy.html">Privacy Policy</a></span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

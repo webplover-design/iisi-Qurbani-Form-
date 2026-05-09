@@ -1,0 +1,3157 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Manrope:wght@400;500;700;800&display=swap');
+
+:root {
+    --ink: #173226;
+    --ink-soft: #4f6359;
+    --deep: #0c3f2a;
+    --green: #16804c;
+    --green-bright: #24a867;
+    --gold: #dba934;
+    --gold-soft: #f7df9a;
+    --cream: #fff5df;
+    --paper: #fffbf2;
+    --white: #ffffff;
+    --rose: #b45743;
+    --shadow: 0 24px 80px rgba(16, 59, 38, 0.18);
+    --radius-lg: 30px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    min-height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.65;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at top left, rgba(219, 169, 52, 0.28), transparent 34rem),
+        radial-gradient(circle at 90% 15%, rgba(22, 128, 76, 0.18), transparent 28rem),
+        linear-gradient(135deg, #fff8e8 0%, #f7ecd2 45%, #f9f1dc 100%);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.22;
+    background-image:
+        linear-gradient(30deg, rgba(12, 63, 42, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(12, 63, 42, 0.08) 87.5%, rgba(12, 63, 42, 0.08)),
+        linear-gradient(150deg, rgba(12, 63, 42, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(12, 63, 42, 0.08) 87.5%, rgba(12, 63, 42, 0.08));
+    background-size: 42px 72px;
+}
+
+.page-background { background-color: var(--cream); }
+.container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    color: var(--white);
+    padding: 0.9rem 0;
+    background: rgba(12, 63, 42, 0.92);
+    border-bottom: 1px solid rgba(247, 223, 154, 0.28);
+    box-shadow: 0 14px 50px rgba(12, 63, 42, 0.22);
+    backdrop-filter: blur(16px);
+}
+
+header .container { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.logo { display: flex; align-items: center; gap: 0.85rem; }
+.logo img { width: 58px; height: 58px; padding: 0.35rem; background: var(--paper); border-radius: 18px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18); }
+.logo h1 { max-width: 440px; font-family: 'Fraunces', serif; font-size: clamp(1.05rem, 1.8vw, 1.55rem); line-height: 1.15; letter-spacing: -0.02em; }
+nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.55rem; }
+nav a { color: rgba(255, 255, 255, 0.88); text-decoration: none; padding: 0.7rem 1rem; border: 1px solid transparent; border-radius: 999px; font-weight: 800; font-size: 0.92rem; transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
+nav a:hover { color: var(--white); background: rgba(255, 255, 255, 0.12); border-color: rgba(247, 223, 154, 0.34); transform: translateY(-2px); }
+
+.hero { position: relative; overflow: hidden; min-height: calc(100vh - 86px); display: grid; place-items: center; padding: 5rem 1.25rem 6rem; }
+.hero::before, .hero::after { content: ""; position: absolute; border-radius: 999px; filter: blur(2px); }
+.hero::before { width: 520px; height: 520px; right: -160px; top: 10%; background: radial-gradient(circle, rgba(219, 169, 52, 0.32), transparent 68%); }
+.hero::after { width: 340px; height: 340px; left: -90px; bottom: 3rem; background: radial-gradient(circle, rgba(22, 128, 76, 0.25), transparent 68%); }
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: min(980px, 100%);
+    min-height: 580px;
+    padding: clamp(2rem, 5vw, 4.5rem);
+    overflow: hidden;
+    text-align: left;
+    color: var(--white);
+    background: linear-gradient(135deg, rgba(12, 63, 42, 0.97), rgba(22, 128, 76, 0.94)), url('image/pattern-repeat-x-white-1.png');
+    border: 1px solid rgba(247, 223, 154, 0.42);
+    border-radius: 44px;
+    box-shadow: var(--shadow);
+    isolation: isolate;
+    animation: riseIn 0.75s ease both;
+}
+
+.hero-content::before { content: "1446 AH"; position: absolute; right: clamp(1rem, 4vw, 3rem); top: 1.2rem; z-index: -1; font-family: 'Fraunces', serif; font-size: clamp(4rem, 14vw, 11rem); font-weight: 750; line-height: 1; color: rgba(255, 255, 255, 0.055); white-space: nowrap; }
+.hero-content h2 { max-width: 690px; margin-bottom: 0.45rem; font-family: 'Fraunces', serif; font-size: clamp(2.7rem, 7vw, 6.6rem); line-height: 0.94; letter-spacing: -0.075em; color: var(--gold-soft); }
+.hero-content h3 { margin-bottom: 1.3rem; font-family: 'Amiri', serif; font-size: clamp(2rem, 5vw, 4.7rem); line-height: 1; color: var(--white); }
+.hero-content p { max-width: 610px; margin-bottom: 1rem; color: rgba(255, 255, 255, 0.84); font-size: clamp(1rem, 1.5vw, 1.17rem); }
+.hero-content > p:first-of-type { display: inline-flex; width: fit-content; margin-bottom: 1.2rem; padding: 0.5rem 0.85rem; color: #163426; background: var(--gold-soft); border-radius: 999px; font-weight: 900; letter-spacing: 0.01em; }
+.hero-image-wrap { position: absolute; right: clamp(-4rem, -3vw, -1.5rem); bottom: -1.5rem; width: min(42vw, 390px); pointer-events: none; filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.35)); }
+.cow-illustration { width: 100%; display: block; transform: rotate(-3deg); }
+
+.cta-buttons { display: flex; flex-wrap: wrap; gap: 0.85rem; margin: 2rem 0 1.2rem; }
+.btn, .btn-submit, .btn-download, .btn-print { appearance: none; display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0.9rem 1.35rem; border: 0; border-radius: 999px; cursor: pointer; text-decoration: none; font-family: inherit; font-size: 0.96rem; font-weight: 900; transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
+.btn:hover, .btn-submit:hover, .btn-download:hover, .btn-print:hover { transform: translateY(-3px); }
+.primary, .btn-submit, .btn-download { color: #173226; background: linear-gradient(135deg, var(--gold-soft), var(--gold)); box-shadow: 0 16px 30px rgba(219, 169, 52, 0.27); }
+.primary:hover, .btn-submit:hover, .btn-download:hover { box-shadow: 0 20px 44px rgba(219, 169, 52, 0.36); }
+.secondary, .btn-print { color: var(--white); background: rgba(255, 255, 255, 0.09); border: 1px solid rgba(247, 223, 154, 0.5); }
+.secondary:hover, .btn-print:hover { background: rgba(255, 255, 255, 0.17); }
+.contact { max-width: 580px; margin-top: 1.5rem; padding-top: 1.4rem; border-top: 1px solid rgba(255, 255, 255, 0.16); }
+.contact p { margin: 0; font-weight: 800; }
+
+.form-section, .token-section { width: min(1040px, calc(100% - 40px)); margin: 3rem auto 4rem; }
+.form-section { padding: 0; background: transparent; }
+.step-card, .token-section { position: relative; overflow: hidden; padding: clamp(1.4rem, 4vw, 2.6rem); margin-bottom: 1.8rem; background: rgba(255, 251, 242, 0.9); border: 1px solid rgba(12, 63, 42, 0.13); border-radius: var(--radius-lg); box-shadow: 0 22px 70px rgba(47, 78, 57, 0.12); backdrop-filter: blur(14px); }
+.step-card::before, .token-section::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 7px; background: linear-gradient(90deg, var(--green), var(--gold), var(--rose)); }
+.step-label { display: inline-flex; margin-bottom: 1rem; padding: 0.4rem 0.85rem; color: var(--deep); background: rgba(219, 169, 52, 0.22); border: 1px solid rgba(219, 169, 52, 0.35); border-radius: 999px; font-size: 0.82rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; }
+.step-card h2, .token-section h2 { max-width: 760px; margin-bottom: 0.4rem; font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; letter-spacing: -0.04em; color: var(--deep); }
+.step-card h3, .token-section h3 { margin: 1.4rem 0 0.7rem; color: var(--green); font-family: 'Fraunces', serif; font-size: clamp(1.35rem, 2vw, 1.9rem); }
+.step-card h3[lang], .step-card h3:not(:first-child) { font-family: 'Amiri', serif; }
+.step-card p, .token-section p { max-width: 760px; margin-bottom: 1rem; color: var(--ink-soft); }
+.highlight-box, #collection-note { padding: 1rem 1.15rem; margin: 1rem 0 1.6rem; color: #31493b; background: linear-gradient(135deg, rgba(22, 128, 76, 0.1), rgba(219, 169, 52, 0.14)); border: 1px solid rgba(22, 128, 76, 0.16); border-radius: var(--radius-md); }
+
+form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.1rem; margin-top: 1.4rem; }
+.form-group { margin: 0; }
+.form-group:has(textarea), .form-group:has(#qurbani-by), #collection-note, #waqf-for-group { grid-column: 1 / -1; }
+label { display: block; margin-bottom: 0.45rem; color: var(--deep); font-size: 0.88rem; font-weight: 900; }
+input, select, textarea { width: 100%; min-height: 50px; padding: 0.82rem 0.95rem; color: var(--ink); background: rgba(255, 255, 255, 0.86); border: 1px solid rgba(12, 63, 42, 0.16); border-radius: var(--radius-sm); font: inherit; outline: none; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8); transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; }
+textarea { min-height: 110px; resize: vertical; }
+input:focus, select:focus, textarea:focus { border-color: var(--green-bright); background: var(--white); box-shadow: 0 0 0 4px rgba(36, 168, 103, 0.14); }
+input[readonly] { color: #426252; background: rgba(22, 128, 76, 0.08); border-style: dashed; }
+.btn-submit { grid-column: 1 / -1; width: 100%; margin-top: 0.4rem; }
+#add-item-btn { grid-column: 1 / -1; width: fit-content; }
+
+.order-summary, #token-order-summary { width: 100%; margin-top: 1.7rem; overflow-x: auto; border-radius: var(--radius-md); }
+.order-summary p { padding: 1.2rem; background: rgba(12, 63, 42, 0.06); border-radius: var(--radius-md); }
+table { width: 100%; min-width: 780px; border-collapse: collapse; overflow: hidden; background: var(--white); border: 1px solid rgba(12, 63, 42, 0.1); border-radius: var(--radius-md); }
+th, td { padding: 0.92rem; text-align: left; border-bottom: 1px solid rgba(12, 63, 42, 0.08); vertical-align: top; }
+th { color: var(--white); background: var(--deep); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
+td { color: var(--ink-soft); font-size: 0.92rem; }
+.remove-btn { color: var(--white); background: var(--rose); border: 0; padding: 0.55rem 0.75rem; border-radius: 999px; cursor: pointer; font-weight: 800; }
+
+.token-section { text-align: left; }
+.token-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin: 1.4rem 0; }
+.token-details p, .token-section > p:nth-of-type(n+3):nth-of-type(-n+6) { padding: 1rem; margin: 0; background: rgba(22, 128, 76, 0.08); border-radius: var(--radius-sm); }
+.token-section a { color: var(--green); font-weight: 900; }
+
+footer { color: rgba(255, 255, 255, 0.84); padding: 2.4rem 0; text-align: center; background: #092d1f; border-top: 1px solid rgba(247, 223, 154, 0.2); }
+footer .container { display: grid; gap: 0.55rem; }
+footer a { color: var(--gold-soft); text-decoration: none; font-weight: 800; }
+footer a:hover { text-decoration: underline; }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(24px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+@media (max-width: 860px) {
+    header { position: relative; }
+    header .container { align-items: flex-start; flex-direction: column; }
+    nav { justify-content: flex-start; }
+    .hero { min-height: auto; padding-top: 2rem; }
+    .hero-content { min-height: 0; padding-bottom: 15rem; border-radius: 30px; }
+    .hero-image-wrap { width: 250px; right: -2rem; bottom: -0.8rem; }
+    form, .token-details { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+    .container, .form-section, .token-section { width: min(100% - 24px, 1040px); }
+    .logo img { width: 48px; height: 48px; }
+    nav a { padding: 0.6rem 0.78rem; font-size: 0.84rem; }
+    .hero { padding-left: 0.75rem; padding-right: 0.75rem; }
+    .hero-content { padding: 1.55rem 1.25rem 13rem; }
+    .cta-buttons { align-items: stretch; flex-direction: column; }
+    .btn, .btn-submit, .btn-download, .btn-print, #add-item-btn { width: 100%; }
+    .hero-image-wrap { width: 215px; }
+    .step-card, .token-section { border-radius: 22px; }
+}
+
+@media print {
+    header, footer, .cta-buttons { display: none; }
+    body { background: #fff; }
+    .token-section { box-shadow: none; border: 1px solid #ddd; }
+}
+
+
+.step-back-btn { color: var(--deep); background: rgba(22, 128, 76, 0.08); border-color: rgba(22, 128, 76, 0.22); margin: 0.6rem 0 1.1rem; }
+.step-back-btn:hover { background: rgba(22, 128, 76, 0.14); }
+
+
+.order-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; margin-top: 0.4rem; }
+.order-actions #add-item-btn { width: auto; }
+.checkout-btn { color: var(--white); background: var(--deep); box-shadow: 0 16px 30px rgba(12, 63, 42, 0.22); }
+.checkout-btn:hover { background: var(--green); }
+@media (max-width: 560px) { .order-actions { flex-direction: column; } .order-actions #add-item-btn, .checkout-btn { width: 100%; } }
+
+/* Scoped Book Qurbani wizard styles */
+.qurbani-wizard-page .qurbani-wizard-hero {
+    padding: clamp(2rem, 5vw, 3.6rem) 0 1.2rem;
+}
+
+.qurbani-wizard-page .qurbani-kicker {
+    display: inline-flex;
+    margin-bottom: 0.75rem;
+    padding: 0.38rem 0.8rem;
+    color: var(--deep);
+    background: rgba(219, 169, 52, 0.22);
+    border: 1px solid rgba(219, 169, 52, 0.34);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.qurbani-wizard-page .qurbani-wizard-hero h2 {
+    margin: 0 0 0.55rem;
+    color: var(--deep);
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.35rem, 6vw, 5.2rem);
+    line-height: 0.96;
+    letter-spacing: -0.07em;
+}
+
+.qurbani-wizard-page .qurbani-wizard-hero p {
+    max-width: 690px;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+}
+
+.qurbani-wizard-page .qurbani-wizard-shell {
+    display: grid;
+    grid-template-columns: 285px minmax(0, 1fr);
+    gap: 1.15rem;
+    align-items: start;
+    margin-top: 1.4rem;
+    margin-bottom: 4rem;
+}
+
+.qurbani-wizard-page .qurbani-stepper {
+    position: sticky;
+    top: 104px;
+    display: grid;
+    gap: 0.62rem;
+    padding: 0.85rem;
+    background: rgba(255, 251, 242, 0.88);
+    border: 1px solid rgba(12, 63, 42, 0.13);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(47, 78, 57, 0.12);
+    backdrop-filter: blur(14px);
+}
+
+.qurbani-wizard-page .qurbani-step-nav {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 0 0.75rem;
+    width: 100%;
+    padding: 0.82rem;
+    color: var(--ink-soft);
+    text-align: left;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.qurbani-wizard-page .qurbani-step-nav:disabled {
+    cursor: not-allowed;
+    opacity: 0.52;
+}
+
+.qurbani-wizard-page .qurbani-step-nav span {
+    grid-row: 1 / 3;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    color: var(--deep);
+    background: var(--white);
+    border: 1px solid rgba(12, 63, 42, 0.14);
+    border-radius: 50%;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-step-nav strong {
+    align-self: end;
+    color: var(--ink);
+    font-size: 0.92rem;
+}
+
+.qurbani-wizard-page .qurbani-step-nav small {
+    color: var(--ink-soft);
+    font-weight: 700;
+}
+
+.qurbani-wizard-page .qurbani-step-nav.is-active {
+    color: var(--white);
+    background: var(--deep);
+    border-color: var(--deep);
+    box-shadow: 0 14px 30px rgba(12, 63, 42, 0.22);
+}
+
+.qurbani-wizard-page .qurbani-step-nav.is-active strong,
+.qurbani-wizard-page .qurbani-step-nav.is-active small {
+    color: var(--white);
+}
+
+.qurbani-wizard-page .qurbani-step-nav.is-complete span {
+    color: var(--white);
+    background: var(--green);
+    border-color: var(--green);
+}
+
+.qurbani-wizard-page .qurbani-wizard {
+    display: block;
+    min-height: 620px;
+    margin: 0;
+    padding: clamp(1.2rem, 3.2vw, 2.5rem);
+    background: rgba(255, 251, 242, 0.94);
+    border: 1px solid rgba(12, 63, 42, 0.13);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 22px 70px rgba(47, 78, 57, 0.12);
+    backdrop-filter: blur(14px);
+}
+
+.qurbani-wizard-page .qurbani-alert {
+    display: none;
+    margin-bottom: 1rem;
+    padding: 0.85rem 1rem;
+    color: #852b20;
+    background: #fff1ee;
+    border: 1px solid rgba(180, 87, 67, 0.25);
+    border-radius: var(--radius-sm);
+    font-weight: 800;
+}
+
+.qurbani-wizard-page .qurbani-alert.is-visible { display: block; }
+.qurbani-wizard-page .qurbani-wizard-step { display: none; animation: qurbaniStepIn 0.26s ease both; }
+.qurbani-wizard-page .qurbani-wizard-step.is-active { display: block; }
+
+.qurbani-wizard-page .qurbani-step-heading {
+    max-width: 760px;
+    margin-bottom: 1.45rem;
+}
+
+.qurbani-wizard-page .qurbani-step-heading span {
+    color: var(--green);
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.qurbani-wizard-page .qurbani-step-heading h2 {
+    margin: 0.22rem 0 0.4rem;
+    color: var(--deep);
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.qurbani-wizard-page .qurbani-step-heading p {
+    margin: 0;
+    color: var(--ink-soft);
+}
+
+.qurbani-wizard-page .qurbani-package-grid,
+.qurbani-wizard-page .qurbani-type-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.qurbani-wizard-page .qurbani-package-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.qurbani-wizard-page .qurbani-type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.qurbani-wizard-page .qurbani-choice-card {
+    position: relative;
+    display: grid;
+    gap: 0.5rem;
+    min-height: 180px;
+    padding: 1.2rem;
+    background: var(--white);
+    border: 1px solid rgba(12, 63, 42, 0.13);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.qurbani-wizard-page .qurbani-choice-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(22, 128, 76, 0.32);
+    box-shadow: 0 18px 40px rgba(47, 78, 57, 0.1);
+}
+
+.qurbani-wizard-page .qurbani-choice-card input {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 22px;
+    height: 22px;
+    accent-color: var(--green);
+}
+
+.qurbani-wizard-page .qurbani-choice-card:has(input:checked) {
+    border-color: var(--green);
+    box-shadow: inset 0 0 0 2px rgba(22, 128, 76, 0.16), 0 18px 42px rgba(22, 128, 76, 0.14);
+}
+
+.qurbani-wizard-page .qurbani-choice-card strong {
+    padding-right: 1.8rem;
+    color: var(--deep);
+    font-size: 1.14rem;
+    line-height: 1.28;
+}
+
+.qurbani-wizard-page .qurbani-package-card em {
+    color: var(--green);
+    font-style: normal;
+    font-size: 1.55rem;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-choice-card small {
+    color: var(--ink-soft);
+    line-height: 1.55;
+}
+
+.qurbani-wizard-page .qurbani-animal-tag {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.35rem 0.7rem;
+    color: var(--white);
+    background: var(--deep);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-gold-tag {
+    color: var(--deep);
+    background: var(--gold-soft);
+}
+
+.qurbani-wizard-page .qurbani-secondary-choice { opacity: 0.92; }
+
+.qurbani-wizard-page .qurbani-conditional-panel,
+.qurbani-wizard-page .qurbani-quantity-card,
+.qurbani-wizard-page .qurbani-total-card,
+.qurbani-wizard-page .qurbani-single-field,
+.qurbani-wizard-page .qurbani-summary-card {
+    margin-top: 1rem;
+    padding: 1.15rem;
+    background: var(--white);
+    border: 1px solid rgba(12, 63, 42, 0.13);
+    border-radius: var(--radius-md);
+}
+
+.qurbani-wizard-page .qurbani-conditional-panel.is-hidden { display: none; }
+.qurbani-wizard-page .qurbani-conditional-panel strong { display: block; margin-bottom: 0.35rem; color: var(--deep); }
+.qurbani-wizard-page .qurbani-conditional-panel p { margin: 0.25rem 0 1rem; color: var(--ink-soft); }
+
+.qurbani-wizard-page .qurbani-location-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.7rem 1rem;
+    color: var(--white);
+    background: var(--green);
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-pricing-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.qurbani-wizard-page .qurbani-quantity-card,
+.qurbani-wizard-page .qurbani-total-card { margin-top: 0; }
+
+.qurbani-wizard-page .qurbani-quantity-control {
+    display: grid;
+    grid-template-columns: 52px 1fr 52px;
+    gap: 0.55rem;
+    align-items: center;
+}
+
+.qurbani-wizard-page .qurbani-quantity-control button {
+    min-height: 52px;
+    color: var(--deep);
+    background: var(--gold-soft);
+    border: 0;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 1.45rem;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-quantity-control input {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-total-card span {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.qurbani-wizard-page .qurbani-total-card strong {
+    display: block;
+    margin: 0.2rem 0;
+    color: var(--deep);
+    font-size: clamp(1.55rem, 3vw, 2.3rem);
+}
+
+.qurbani-wizard-page .qurbani-total-card .qurbani-main-total {
+    color: var(--green);
+    font-size: clamp(2rem, 4.4vw, 3.35rem);
+}
+
+.qurbani-wizard-page .qurbani-total-card small { color: var(--ink-soft); }
+.qurbani-wizard-page .qurbani-total-card hr { margin: 1rem 0; border: 0; border-top: 1px solid rgba(12, 63, 42, 0.1); }
+
+.qurbani-wizard-page .qurbani-currency-toggle {
+    margin-top: 0.6rem;
+    padding: 0;
+    color: var(--green);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-foreign-totals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.qurbani-wizard-page .qurbani-foreign-totals span {
+    padding: 0.42rem 0.65rem;
+    color: var(--ink-soft);
+    background: rgba(12, 63, 42, 0.06);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.qurbani-wizard-page .qurbani-single-field { max-width: 650px; }
+
+.qurbani-wizard-page .qurbani-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.qurbani-wizard-page .qurbani-wide { grid-column: 1 / -1; }
+
+.qurbani-wizard-page .qurbani-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.qurbani-wizard-page .qurbani-summary-item {
+    padding: 0.9rem;
+    background: rgba(12, 63, 42, 0.055);
+    border-radius: var(--radius-sm);
+}
+
+.qurbani-wizard-page .qurbani-summary-item span {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.qurbani-wizard-page .qurbani-summary-item strong {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--ink);
+    line-height: 1.38;
+    overflow-wrap: anywhere;
+}
+
+.qurbani-wizard-page .qurbani-summary-item.qurbani-highlight {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(22, 128, 76, 0.1), rgba(219, 169, 52, 0.14));
+}
+
+.qurbani-wizard-page .qurbani-summary-item.qurbani-highlight strong {
+    color: var(--green);
+    font-size: 1.8rem;
+}
+
+.qurbani-wizard-page .qurbani-summary-item.qurbani-highlight small {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--ink-soft);
+    font-weight: 800;
+}
+
+.qurbani-wizard-page .qurbani-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 58px;
+    margin-top: 1rem;
+    color: #173226;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 1.02rem;
+    font-weight: 900;
+    box-shadow: 0 16px 30px rgba(219, 169, 52, 0.27);
+}
+
+.qurbani-wizard-page .qurbani-wizard-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid rgba(12, 63, 42, 0.1);
+}
+
+.qurbani-wizard-page .qurbani-prev-btn,
+.qurbani-wizard-page .qurbani-next-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0.85rem 1.25rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-prev-btn {
+    min-width: 130px;
+    color: var(--deep);
+    background: var(--white);
+    border: 1px solid rgba(12, 63, 42, 0.14);
+}
+
+.qurbani-wizard-page .qurbani-next-btn {
+    min-width: 150px;
+    color: var(--white);
+    background: var(--deep);
+    border: 1px solid var(--deep);
+}
+
+.qurbani-wizard-page .qurbani-prev-btn:disabled,
+.qurbani-wizard-page .qurbani-next-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+@keyframes qurbaniStepIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 920px) {
+    .qurbani-wizard-page .qurbani-wizard-shell { grid-template-columns: 1fr; }
+    .qurbani-wizard-page .qurbani-stepper {
+        position: static;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .qurbani-wizard-page .qurbani-step-nav {
+        grid-template-columns: 34px 1fr;
+        padding: 0.68rem;
+    }
+    .qurbani-wizard-page .qurbani-step-nav span { width: 34px; height: 34px; }
+    .qurbani-wizard-page .qurbani-package-grid { grid-template-columns: 1fr; }
+    .qurbani-wizard-page .qurbani-pricing-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+    .qurbani-wizard-page .qurbani-wizard-shell { width: min(100% - 24px, 1040px); }
+    .qurbani-wizard-page .qurbani-wizard { min-height: auto; padding: 1rem; border-radius: 22px; }
+    .qurbani-wizard-page .qurbani-stepper { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.45rem; }
+    .qurbani-wizard-page .qurbani-step-nav strong { font-size: 0.78rem; }
+    .qurbani-wizard-page .qurbani-step-nav small { display: none; }
+    .qurbani-wizard-page .qurbani-type-grid,
+    .qurbani-wizard-page .qurbani-details-grid,
+    .qurbani-wizard-page .qurbani-summary-grid { grid-template-columns: 1fr; }
+    .qurbani-wizard-page .qurbani-summary-item.qurbani-highlight { grid-column: auto; }
+    .qurbani-wizard-page .qurbani-choice-card { min-height: 145px; }
+    .qurbani-wizard-page .qurbani-wizard-actions {
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+        margin: 1rem -1rem -1rem;
+        padding: 0.8rem 1rem;
+        background: rgba(255, 251, 242, 0.95);
+        border-radius: 0 0 22px 22px;
+        backdrop-filter: blur(12px);
+    }
+    .qurbani-wizard-page .qurbani-prev-btn,
+    .qurbani-wizard-page .qurbani-next-btn { flex: 1; min-width: 0; }
+}
+
+.qurbani-wizard-page .qurbani-item-actions {
+    display: grid;
+    gap: 0.45rem;
+    max-width: 650px;
+    margin-top: 1rem;
+}
+
+.qurbani-wizard-page .qurbani-add-item-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0.85rem 1.15rem;
+    color: var(--white);
+    background: var(--green);
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-item-actions p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+
+.qurbani-wizard-page .qurbani-added-items {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(22, 128, 76, 0.06);
+    border: 1px solid rgba(22, 128, 76, 0.16);
+    border-radius: var(--radius-md);
+}
+
+.qurbani-wizard-page .qurbani-added-items h3 {
+    margin: 0 0 0.75rem;
+    color: var(--deep);
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+}
+
+.qurbani-wizard-page .qurbani-added-item,
+.qurbani-wizard-page .qurbani-summary-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem;
+    background: var(--white);
+    border: 1px solid rgba(12, 63, 42, 0.1);
+    border-radius: var(--radius-sm);
+}
+
+.qurbani-wizard-page .qurbani-added-item + .qurbani-added-item,
+.qurbani-wizard-page .qurbani-summary-line + .qurbani-summary-line {
+    margin-top: 0.6rem;
+}
+
+.qurbani-wizard-page .qurbani-added-item span,
+.qurbani-wizard-page .qurbani-summary-line small {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.qurbani-wizard-page .qurbani-added-item b,
+.qurbani-wizard-page .qurbani-summary-line strong {
+    display: block;
+    color: var(--green);
+    white-space: nowrap;
+}
+
+.qurbani-wizard-page .qurbani-added-item button {
+    margin-top: 0.35rem;
+    padding: 0.35rem 0.65rem;
+    color: var(--white);
+    background: var(--rose);
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-summary-items {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 620px) {
+    .qurbani-wizard-page .qurbani-added-item,
+    .qurbani-wizard-page .qurbani-summary-line {
+        display: grid;
+    }
+
+    .qurbani-wizard-page .qurbani-added-item b,
+    .qurbani-wizard-page .qurbani-summary-line strong {
+        white-space: normal;
+    }
+}
+
+.qurbani-wizard-page .qurbani-package-image {
+    display: block;
+    width: 112px;
+    height: 82px;
+    object-fit: contain;
+    justify-self: center;
+    margin: 0.2rem auto 0.15rem;
+    mix-blend-mode: multiply;
+}
+
+.qurbani-wizard-page .qurbani-package-card {
+    text-align: center;
+}
+
+.qurbani-wizard-page .qurbani-package-card strong {
+    padding-right: 0;
+}
+
+/* Compact scale refinements for Book Qurbani wizard */
+.qurbani-wizard-page .qurbani-wizard-hero {
+    padding: 1.35rem 0 0.65rem;
+}
+
+.qurbani-wizard-page .qurbani-kicker {
+    margin-bottom: 0.45rem;
+    padding: 0.28rem 0.62rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+}
+
+.qurbani-wizard-page .qurbani-wizard-hero h2 {
+    margin-bottom: 0.35rem;
+    font-size: clamp(1.8rem, 3.2vw, 2.15rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+.qurbani-wizard-page .qurbani-wizard-hero p {
+    max-width: 620px;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.qurbani-wizard-page .qurbani-wizard-shell {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 0.85rem;
+    margin-top: 0.85rem;
+    margin-bottom: 2.3rem;
+}
+
+.qurbani-wizard-page .qurbani-stepper {
+    top: 88px;
+    gap: 0.42rem;
+    padding: 0.58rem;
+    border-radius: 22px;
+}
+
+.qurbani-wizard-page .qurbani-step-nav {
+    grid-template-columns: 32px 1fr;
+    gap: 0 0.55rem;
+    padding: 0.55rem;
+    border-radius: 14px;
+}
+
+.qurbani-wizard-page .qurbani-step-nav span {
+    width: 32px;
+    height: 32px;
+    font-size: 0.82rem;
+}
+
+.qurbani-wizard-page .qurbani-step-nav strong {
+    font-size: 0.8rem;
+    line-height: 1.15;
+}
+
+.qurbani-wizard-page .qurbani-step-nav small {
+    font-size: 0.7rem;
+    line-height: 1.2;
+}
+
+.qurbani-wizard-page .qurbani-wizard {
+    min-height: auto;
+    padding: 1.15rem;
+    border-radius: 22px;
+}
+
+.qurbani-wizard-page .qurbani-alert {
+    margin-bottom: 0.7rem;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.86rem;
+}
+
+.qurbani-wizard-page .qurbani-step-heading {
+    margin-bottom: 0.9rem;
+}
+
+.qurbani-wizard-page .qurbani-step-heading span {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+}
+
+.qurbani-wizard-page .qurbani-step-heading h2 {
+    margin: 0.12rem 0 0.25rem;
+    font-size: clamp(1.35rem, 2.5vw, 1.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+}
+
+.qurbani-wizard-page .qurbani-step-heading p {
+    max-width: 650px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.qurbani-wizard-page .qurbani-package-grid,
+.qurbani-wizard-page .qurbani-type-grid,
+.qurbani-wizard-page .qurbani-pricing-layout,
+.qurbani-wizard-page .qurbani-details-grid,
+.qurbani-wizard-page .qurbani-summary-grid {
+    gap: 0.7rem;
+}
+
+.qurbani-wizard-page .qurbani-choice-card {
+    min-height: 136px;
+    gap: 0.28rem;
+    padding: 0.78rem;
+    border-radius: 16px;
+}
+
+.qurbani-wizard-page .qurbani-choice-card input {
+    top: 0.7rem;
+    right: 0.7rem;
+    width: 18px;
+    height: 18px;
+}
+
+.qurbani-wizard-page .qurbani-package-image {
+    width: 86px;
+    height: 58px;
+    margin: 0 auto 0.05rem;
+}
+
+.qurbani-wizard-page .qurbani-choice-card strong {
+    font-size: 0.96rem;
+    line-height: 1.22;
+}
+
+.qurbani-wizard-page .qurbani-package-card em {
+    font-size: 1.12rem;
+    line-height: 1.2;
+}
+
+.qurbani-wizard-page .qurbani-choice-card small,
+.qurbani-wizard-page .qurbani-item-actions p,
+.qurbani-wizard-page .qurbani-added-item span,
+.qurbani-wizard-page .qurbani-summary-line small {
+    font-size: 0.8rem;
+    line-height: 1.35;
+}
+
+.qurbani-wizard-page .qurbani-type-card {
+    min-height: 118px;
+}
+
+.qurbani-wizard-page .qurbani-conditional-panel,
+.qurbani-wizard-page .qurbani-quantity-card,
+.qurbani-wizard-page .qurbani-total-card,
+.qurbani-wizard-page .qurbani-single-field,
+.qurbani-wizard-page .qurbani-summary-card,
+.qurbani-wizard-page .qurbani-added-items {
+    margin-top: 0.7rem;
+    padding: 0.82rem;
+    border-radius: 16px;
+}
+
+.qurbani-wizard-page .qurbani-conditional-panel p {
+    margin: 0.15rem 0 0.65rem;
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+.qurbani-wizard-page label {
+    margin-bottom: 0.32rem;
+    font-size: 0.82rem;
+}
+
+.qurbani-wizard-page input,
+.qurbani-wizard-page select,
+.qurbani-wizard-page textarea {
+    min-height: 42px;
+    padding: 0.62rem 0.72rem;
+    border-radius: 11px;
+    font-size: 0.88rem;
+}
+
+.qurbani-wizard-page textarea {
+    min-height: 86px;
+}
+
+.qurbani-wizard-page .qurbani-location-btn,
+.qurbani-wizard-page .qurbani-add-item-btn,
+.qurbani-wizard-page .qurbani-submit-btn,
+.qurbani-wizard-page .qurbani-prev-btn,
+.qurbani-wizard-page .qurbani-next-btn {
+    min-height: 42px;
+    padding: 0.62rem 0.95rem;
+    font-size: 0.88rem;
+}
+
+.qurbani-wizard-page .qurbani-prev-btn {
+    min-width: 105px;
+}
+
+.qurbani-wizard-page .qurbani-next-btn {
+    min-width: 118px;
+}
+
+.qurbani-wizard-page .qurbani-quantity-control {
+    grid-template-columns: 42px 1fr 42px;
+    gap: 0.42rem;
+}
+
+.qurbani-wizard-page .qurbani-quantity-control button {
+    min-height: 42px;
+    border-radius: 11px;
+    font-size: 1.1rem;
+}
+
+.qurbani-wizard-page .qurbani-quantity-control input {
+    font-size: 1rem;
+}
+
+.qurbani-wizard-page .qurbani-total-card span {
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+}
+
+.qurbani-wizard-page .qurbani-total-card strong {
+    margin: 0.1rem 0;
+    font-size: 1.35rem;
+}
+
+.qurbani-wizard-page .qurbani-total-card .qurbani-main-total {
+    font-size: clamp(1.7rem, 3.5vw, 2.35rem);
+}
+
+.qurbani-wizard-page .qurbani-total-card hr {
+    margin: 0.7rem 0;
+}
+
+.qurbani-wizard-page .qurbani-currency-toggle {
+    margin-top: 0.38rem;
+    font-size: 0.84rem;
+}
+
+.qurbani-wizard-page .qurbani-foreign-totals {
+    gap: 0.35rem;
+    margin-top: 0.45rem;
+}
+
+.qurbani-wizard-page .qurbani-foreign-totals span {
+    padding: 0.28rem 0.5rem;
+    font-size: 0.78rem;
+}
+
+.qurbani-wizard-page .qurbani-item-actions {
+    gap: 0.3rem;
+    margin-top: 0.7rem;
+}
+
+.qurbani-wizard-page .qurbani-added-items h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.qurbani-wizard-page .qurbani-added-item,
+.qurbani-wizard-page .qurbani-summary-line {
+    gap: 0.75rem;
+    padding: 0.62rem;
+    border-radius: 12px;
+}
+
+.qurbani-wizard-page .qurbani-added-item + .qurbani-added-item,
+.qurbani-wizard-page .qurbani-summary-line + .qurbani-summary-line {
+    margin-top: 0.45rem;
+}
+
+.qurbani-wizard-page .qurbani-summary-items {
+    margin-bottom: 0.7rem;
+}
+
+.qurbani-wizard-page .qurbani-summary-item {
+    padding: 0.62rem;
+    border-radius: 12px;
+}
+
+.qurbani-wizard-page .qurbani-summary-item span {
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+}
+
+.qurbani-wizard-page .qurbani-summary-item strong {
+    margin-top: 0.12rem;
+    font-size: 0.9rem;
+    line-height: 1.28;
+}
+
+.qurbani-wizard-page .qurbani-summary-item.qurbani-highlight strong {
+    font-size: 1.35rem;
+}
+
+.qurbani-wizard-page .qurbani-wizard-actions {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+}
+
+@media (max-width: 920px) {
+    .qurbani-wizard-page .qurbani-wizard-shell {
+        gap: 0.75rem;
+    }
+
+    .qurbani-wizard-page .qurbani-stepper {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .qurbani-wizard-page .qurbani-package-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-wizard-hero {
+        padding: 1rem 0 0.45rem;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard-hero h2 {
+        font-size: 1.65rem;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard-hero p {
+        font-size: 0.86rem;
+    }
+
+    .qurbani-wizard-page .qurbani-package-grid,
+    .qurbani-wizard-page .qurbani-type-grid,
+    .qurbani-wizard-page .qurbani-pricing-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .qurbani-wizard-page .qurbani-choice-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 620px) {
+    .qurbani-wizard-page .qurbani-wizard-shell {
+        width: min(100% - 20px, 1040px);
+        margin-top: 0.65rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .qurbani-wizard-page .qurbani-stepper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.35rem;
+        padding: 0.45rem;
+    }
+
+    .qurbani-wizard-page .qurbani-step-nav {
+        grid-template-columns: 28px 1fr;
+        padding: 0.45rem;
+    }
+
+    .qurbani-wizard-page .qurbani-step-nav span {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard {
+        padding: 0.85rem;
+        border-radius: 18px;
+    }
+
+    .qurbani-wizard-page .qurbani-step-heading h2 {
+        font-size: 1.28rem;
+    }
+
+    .qurbani-wizard-page .qurbani-step-heading p,
+    .qurbani-wizard-page input,
+    .qurbani-wizard-page select,
+    .qurbani-wizard-page textarea {
+        font-size: 0.84rem;
+    }
+
+    .qurbani-wizard-page .qurbani-package-image {
+        width: 78px;
+        height: 50px;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard-actions {
+        margin: 0.85rem -0.85rem -0.85rem;
+        padding: 0.65rem 0.85rem;
+        border-radius: 0 0 18px 18px;
+    }
+}
+
+/* Compact scale refinements for home page and skin collection form */
+header {
+    padding: 0.55rem 0;
+}
+
+.logo img {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+}
+
+.logo h1 {
+    font-size: clamp(0.95rem, 1.45vw, 1.22rem);
+    line-height: 1.12;
+}
+
+nav a {
+    padding: 0.5rem 0.78rem;
+    font-size: 0.84rem;
+}
+
+.hero {
+    min-height: calc(100vh - 68px);
+    padding: 2.2rem 1rem 2.8rem;
+}
+
+.hero-content {
+    width: min(860px, 100%);
+    min-height: 430px;
+    padding: clamp(1.4rem, 3.2vw, 2.45rem);
+    border-radius: 30px;
+}
+
+.hero-content::before {
+    font-size: clamp(3rem, 10vw, 7rem);
+    top: 0.8rem;
+}
+
+.hero-content h2 {
+    max-width: 620px;
+    margin-bottom: 0.35rem;
+    font-size: clamp(2rem, 4.8vw, 3.8rem);
+    line-height: 1;
+    letter-spacing: -0.055em;
+}
+
+.hero-content h3 {
+    margin-bottom: 0.8rem;
+    font-size: clamp(1.55rem, 3.8vw, 3rem);
+}
+
+.hero-content p {
+    max-width: 560px;
+    margin-bottom: 0.65rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.hero-content > p:first-of-type {
+    margin-bottom: 0.8rem;
+    padding: 0.34rem 0.68rem;
+    font-size: 0.86rem;
+}
+
+.cta-buttons {
+    gap: 0.65rem;
+    margin: 1.2rem 0 0.7rem;
+}
+
+.btn,
+.btn-submit,
+.btn-download,
+.btn-print {
+    min-height: 42px;
+    padding: 0.65rem 1rem;
+    font-size: 0.88rem;
+}
+
+.hero-image-wrap {
+    width: min(34vw, 285px);
+    right: clamp(-2.8rem, -2vw, -1rem);
+    bottom: -1rem;
+}
+
+.contact {
+    max-width: 540px;
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+}
+
+.contact p {
+    font-size: 0.86rem;
+}
+
+.form-section,
+.token-section {
+    width: min(920px, calc(100% - 40px));
+    margin: 2rem auto 2.6rem;
+}
+
+.step-card,
+.token-section {
+    padding: clamp(1rem, 2.4vw, 1.65rem);
+    margin-bottom: 1.2rem;
+    border-radius: 22px;
+}
+
+.step-card::before,
+.token-section::before {
+    height: 5px;
+}
+
+.step-label {
+    margin-bottom: 0.65rem;
+    padding: 0.28rem 0.65rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+}
+
+.step-card h2,
+.token-section h2 {
+    margin-bottom: 0.25rem;
+    font-size: clamp(1.55rem, 3vw, 2.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+
+.step-card h3,
+.token-section h3 {
+    margin: 0.75rem 0 0.4rem;
+    font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+}
+
+.step-card p,
+.token-section p,
+.highlight-box p {
+    margin-bottom: 0.65rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.highlight-box,
+#collection-note {
+    padding: 0.75rem 0.85rem;
+    margin: 0.7rem 0 1rem;
+    border-radius: 14px;
+}
+
+form {
+    gap: 0.75rem 0.85rem;
+    margin-top: 0.95rem;
+}
+
+label {
+    margin-bottom: 0.32rem;
+    font-size: 0.82rem;
+}
+
+input,
+select,
+textarea {
+    min-height: 42px;
+    padding: 0.62rem 0.72rem;
+    border-radius: 11px;
+    font-size: 0.88rem;
+}
+
+textarea {
+    min-height: 86px;
+}
+
+.btn-submit {
+    margin-top: 0.15rem;
+}
+
+footer {
+    padding: 1.55rem 0;
+    font-size: 0.84rem;
+}
+
+footer .container {
+    gap: 0.35rem;
+}
+
+@media (max-width: 860px) {
+    header .container {
+        gap: 0.8rem;
+    }
+
+    .hero {
+        padding-top: 1.4rem;
+        padding-bottom: 1.8rem;
+    }
+
+    .hero-content {
+        min-height: 0;
+        padding-bottom: 10rem;
+        border-radius: 24px;
+    }
+
+    .hero-image-wrap {
+        width: 190px;
+        right: -1.2rem;
+        bottom: -0.55rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .container,
+    .form-section,
+    .token-section {
+        width: min(100% - 22px, 920px);
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo h1 {
+        font-size: 0.95rem;
+    }
+
+    nav a {
+        padding: 0.48rem 0.62rem;
+        font-size: 0.78rem;
+    }
+
+    .hero {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+
+    .hero-content {
+        padding: 1rem 1rem 8.5rem;
+        border-radius: 20px;
+    }
+
+    .hero-content h2 {
+        font-size: clamp(1.75rem, 10vw, 2.45rem);
+    }
+
+    .hero-content h3 {
+        font-size: clamp(1.35rem, 8vw, 2rem);
+    }
+
+    .hero-content p,
+    .step-card p,
+    .token-section p,
+    .highlight-box p {
+        font-size: 0.84rem;
+    }
+
+    .cta-buttons {
+        gap: 0.55rem;
+        margin-top: 0.9rem;
+    }
+
+    .hero-image-wrap {
+        width: 165px;
+    }
+
+    .step-card,
+    .token-section {
+        padding: 0.9rem;
+        border-radius: 18px;
+    }
+
+    .step-card h2,
+    .token-section h2 {
+        font-size: 1.45rem;
+    }
+
+    form {
+        gap: 0.65rem;
+    }
+}
+
+/* Remove extra vertical gap around home hero card */
+body:not(.page-background) .hero {
+    min-height: auto;
+    padding: 1.1rem 1rem 1.4rem;
+    align-items: start;
+}
+
+body:not(.page-background) .hero-content {
+    min-height: 0;
+    margin-top: 0;
+}
+
+@media (max-width: 860px) {
+    body:not(.page-background) .hero {
+        padding-top: 0.9rem;
+        padding-bottom: 1.1rem;
+    }
+}
+
+@media (max-width: 560px) {
+    body:not(.page-background) .hero {
+        padding-top: 0.7rem;
+        padding-bottom: 0.9rem;
+    }
+}
+
+/* Strong responsive fixes for Book Qurbani wizard */
+.qurbani-wizard-page {
+    overflow-x: hidden;
+}
+
+.qurbani-wizard-page .qurbani-wizard-shell,
+.qurbani-wizard-page .qurbani-wizard,
+.qurbani-wizard-page .qurbani-stepper,
+.qurbani-wizard-page .qurbani-choice-card,
+.qurbani-wizard-page .qurbani-summary-card {
+    max-width: 100%;
+}
+
+.qurbani-wizard-page .qurbani-step-nav,
+.qurbani-wizard-page .qurbani-choice-card,
+.qurbani-wizard-page .qurbani-summary-item,
+.qurbani-wizard-page .qurbani-summary-line,
+.qurbani-wizard-page .qurbani-added-item {
+    min-width: 0;
+}
+
+.qurbani-wizard-page .qurbani-step-nav strong,
+.qurbani-wizard-page .qurbani-step-nav small,
+.qurbani-wizard-page .qurbani-choice-card strong,
+.qurbani-wizard-page .qurbani-summary-item strong,
+.qurbani-wizard-page .qurbani-summary-line small,
+.qurbani-wizard-page .qurbani-added-item span {
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 1100px) {
+    .qurbani-wizard-page .qurbani-wizard-shell {
+        grid-template-columns: 230px minmax(0, 1fr);
+    }
+
+    .qurbani-wizard-page .qurbani-package-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1080px) {
+    .qurbani-wizard-page .qurbani-wizard-shell {
+        grid-template-columns: 210px minmax(0, 1fr);
+        width: min(100% - 28px, 1040px);
+    }
+
+    .qurbani-wizard-page .qurbani-step-nav {
+        grid-template-columns: 30px 1fr;
+    }
+
+    .qurbani-wizard-page .qurbani-step-nav span {
+        width: 30px;
+        height: 30px;
+    }
+
+    .qurbani-wizard-page .qurbani-package-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .qurbani-wizard-page .qurbani-choice-card {
+        padding: 0.7rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .qurbani-wizard-page .qurbani-wizard-shell {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+    }
+
+    .qurbani-wizard-page .qurbani-stepper {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(72px, 1fr));
+        overflow-x: auto;
+        padding: 0.5rem;
+        scrollbar-width: thin;
+    }
+
+    .qurbani-wizard-page .qurbani-step-nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 0.25rem;
+        min-width: 72px;
+        text-align: center;
+    }
+
+    .qurbani-wizard-page .qurbani-step-nav span {
+        grid-row: auto;
+    }
+
+    .qurbani-wizard-page .qurbani-step-nav small {
+        display: none;
+    }
+
+    .qurbani-wizard-page .qurbani-package-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .qurbani-wizard-page .qurbani-type-grid,
+    .qurbani-wizard-page .qurbani-pricing-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-wizard-hero .container,
+    .qurbani-wizard-page .qurbani-wizard-shell {
+        width: min(100% - 22px, 1040px);
+    }
+
+    .qurbani-wizard-page .qurbani-wizard-hero {
+        padding-top: 0.8rem;
+    }
+
+    .qurbani-wizard-page .qurbani-package-grid,
+    .qurbani-wizard-page .qurbani-type-grid,
+    .qurbani-wizard-page .qurbani-pricing-layout,
+    .qurbani-wizard-page .qurbani-details-grid,
+    .qurbani-wizard-page .qurbani-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .qurbani-wizard-page .qurbani-package-card {
+        grid-template-columns: 82px minmax(0, 1fr);
+        align-items: center;
+        text-align: left;
+        column-gap: 0.75rem;
+    }
+
+    .qurbani-wizard-page .qurbani-package-card input {
+        top: 0.65rem;
+        right: 0.65rem;
+    }
+
+    .qurbani-wizard-page .qurbani-package-image {
+        grid-row: 1 / 4;
+        width: 74px;
+        height: 54px;
+        margin: 0;
+        justify-self: center;
+    }
+
+    .qurbani-wizard-page .qurbani-package-card strong,
+    .qurbani-wizard-page .qurbani-package-card em,
+    .qurbani-wizard-page .qurbani-package-card small {
+        grid-column: 2;
+    }
+
+    .qurbani-wizard-page .qurbani-summary-item.qurbani-highlight,
+    .qurbani-wizard-page .qurbani-wide {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .qurbani-wizard-page header .container {
+        gap: 0.6rem;
+    }
+
+    .qurbani-wizard-page nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.35rem;
+    }
+
+    .qurbani-wizard-page nav a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 36px;
+        padding: 0.42rem 0.35rem;
+        font-size: 0.72rem;
+        text-align: center;
+    }
+
+    .qurbani-wizard-page .qurbani-stepper {
+        grid-template-columns: repeat(6, 68px);
+        margin-left: -0.15rem;
+        margin-right: -0.15rem;
+    }
+
+    .qurbani-wizard-page .qurbani-step-nav {
+        min-width: 68px;
+        padding: 0.42rem 0.3rem;
+    }
+
+    .qurbani-wizard-page .qurbani-step-nav strong {
+        font-size: 0.68rem;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.55rem;
+    }
+
+    .qurbani-wizard-page .qurbani-prev-btn,
+    .qurbani-wizard-page .qurbani-next-btn,
+    .qurbani-wizard-page .qurbani-submit-btn,
+    .qurbani-wizard-page .qurbani-add-item-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .qurbani-wizard-page .qurbani-added-item,
+    .qurbani-wizard-page .qurbani-summary-line {
+        grid-template-columns: 1fr;
+    }
+
+    .qurbani-wizard-page .qurbani-added-item > div:last-child,
+    .qurbani-wizard-page .qurbani-summary-line > strong {
+        justify-self: start;
+    }
+}
+
+@media (max-width: 390px) {
+    .qurbani-wizard-page .qurbani-wizard-hero .container,
+    .qurbani-wizard-page .qurbani-wizard-shell {
+        width: min(100% - 16px, 1040px);
+    }
+
+    .qurbani-wizard-page .qurbani-wizard {
+        padding: 0.7rem;
+    }
+
+    .qurbani-wizard-page .qurbani-package-card {
+        grid-template-columns: 68px minmax(0, 1fr);
+        column-gap: 0.6rem;
+    }
+
+    .qurbani-wizard-page .qurbani-package-image {
+        width: 62px;
+        height: 46px;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard-actions {
+        margin-left: -0.7rem;
+        margin-right: -0.7rem;
+        margin-bottom: -0.7rem;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+}
+
+.footer-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    white-space: nowrap;
+}
+
+/* Keep footer at bottom and balance Book Qurbani page content */
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+.qurbani-wizard-page main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.qurbani-wizard-page .qurbani-wizard-hero {
+    padding-top: 0.9rem;
+}
+
+.qurbani-wizard-page .qurbani-wizard-shell {
+    margin-bottom: 1.8rem;
+}
+
+@media (max-height: 760px) {
+    .qurbani-wizard-page main {
+        justify-content: flex-start;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard-hero {
+        padding-top: 0.7rem;
+    }
+}
+
+/* Final footer-bottom and centered booking content correction */
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.qurbani-wizard-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.qurbani-wizard-page main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 1rem;
+}
+
+.qurbani-wizard-page footer {
+    margin-top: auto;
+}
+
+.qurbani-wizard-page .qurbani-wizard-hero,
+.qurbani-wizard-page .qurbani-wizard-shell {
+    width: 100%;
+}
+
+.qurbani-wizard-page .qurbani-wizard-hero {
+    padding-top: 0;
+}
+
+.qurbani-wizard-page .qurbani-wizard-shell {
+    margin-bottom: 0;
+}
+
+@media (max-height: 780px), (max-width: 760px) {
+    .qurbani-wizard-page main {
+        justify-content: flex-start;
+        padding-block: 0.75rem;
+    }
+}
+
+/* Boxed center content for Book Qurbani page */
+.qurbani-wizard-page main {
+    width: min(1180px, calc(100% - 48px));
+    margin: 1rem auto;
+    padding: 1rem 1.1rem 1.2rem;
+    border: 1px solid rgba(12, 63, 42, 0.08);
+    border-radius: 28px;
+    background: rgba(255, 248, 232, 0.72);
+    box-shadow: 0 18px 60px rgba(47, 78, 57, 0.08);
+}
+
+.qurbani-wizard-page .qurbani-wizard-hero .container,
+.qurbani-wizard-page .qurbani-wizard-shell {
+    width: 100%;
+}
+
+.qurbani-wizard-page .qurbani-wizard-shell {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page main {
+        width: min(100% - 22px, 1180px);
+        margin: 0.7rem auto;
+        padding: 0.75rem;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .qurbani-wizard-page main {
+        width: min(100% - 14px, 1180px);
+        padding: 0.55rem;
+        border-radius: 16px;
+    }
+}
+
+/* Make Book Qurbani outer box transparent */
+.qurbani-wizard-page main {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* Hide USD/GBP toggle text while keeping compact totals visible */
+.qurbani-wizard-page .qurbani-currency-toggle {
+    display: none;
+}
+
+.qurbani-wizard-page .qurbani-foreign-totals[hidden] {
+    display: flex;
+}
+
+.qurbani-wizard-page .qurbani-foreign-price-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.3rem;
+}
+
+.qurbani-wizard-page .qurbani-foreign-price-pills span {
+    padding: 0.28rem 0.5rem;
+    color: var(--ink-soft);
+    background: rgba(12, 63, 42, 0.06);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.qurbani-wizard-page .qurbani-collection-info {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(260px, 1.1fr);
+    gap: 0.8rem;
+    align-items: stretch;
+}
+
+.qurbani-wizard-page .qurbani-map-frame {
+    width: 100%;
+    min-height: 142px;
+    border: 1px solid rgba(12, 63, 42, 0.16);
+    border-radius: 14px;
+    background: rgba(12, 63, 42, 0.06);
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-collection-info {
+        grid-template-columns: 1fr;
+    }
+
+    .qurbani-wizard-page .qurbani-map-frame {
+        min-height: 180px;
+    }
+}
+
+.qurbani-wizard-page .qurbani-choose-another-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0.62rem 0.95rem;
+    color: var(--deep);
+    background: var(--gold-soft);
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-inline-name-label {
+    margin: 0.45rem 0 0.25rem;
+    font-size: 0.74rem;
+}
+
+.qurbani-wizard-page .qurbani-inline-name {
+    min-height: 38px;
+    padding: 0.52rem 0.65rem;
+    font-size: 0.84rem;
+}
+
+.qurbani-wizard-page .qurbani-added-item {
+    align-items: center;
+}
+
+@media (max-width: 560px) {
+    .qurbani-wizard-page .qurbani-choose-another-btn {
+        width: 100%;
+    }
+}
+
+.qurbani-wizard-page .qurbani-order-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid rgba(12, 63, 42, 0.12);
+    border-radius: 14px;
+    background: var(--white);
+}
+
+.qurbani-wizard-page .qurbani-order-table {
+    width: 100%;
+    min-width: 860px;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+.qurbani-wizard-page .qurbani-order-table th {
+    padding: 0.62rem 0.55rem;
+    color: var(--white);
+    background: var(--deep);
+    border: 0;
+    font-size: 0.78rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.qurbani-wizard-page .qurbani-order-table td {
+    padding: 0.62rem 0.55rem;
+    color: var(--ink-soft);
+    border: 1px solid rgba(12, 63, 42, 0.08);
+    font-size: 0.82rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.qurbani-wizard-page .qurbani-order-package {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    text-align: left !important;
+    color: var(--ink) !important;
+    font-weight: 800;
+}
+
+.qurbani-wizard-page .qurbani-order-package img {
+    width: 42px;
+    height: 34px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: rgba(12, 63, 42, 0.04);
+}
+
+.qurbani-wizard-page .qurbani-order-table .qurbani-inline-name {
+    min-width: 130px;
+    min-height: 34px;
+    padding: 0.45rem 0.55rem;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.qurbani-wizard-page .qurbani-table-remove {
+    min-height: 34px;
+    padding: 0.42rem 0.72rem;
+    color: var(--rose);
+    background: #fff6f4;
+    border: 1px solid rgba(180, 87, 67, 0.38);
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-order-table tfoot td {
+    color: var(--deep);
+    background: rgba(12, 63, 42, 0.035);
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+.qurbani-wizard-page .qurbani-order-table tfoot td:first-child {
+    text-align: right;
+}
+
+.qurbani-wizard-page .qurbani-empty-summary {
+    margin: 0;
+    padding: 0.75rem;
+    color: var(--ink-soft);
+    background: var(--white);
+    border-radius: 12px;
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-order-table-wrap {
+        border-radius: 12px;
+    }
+
+    .qurbani-wizard-page .qurbani-order-table th,
+    .qurbani-wizard-page .qurbani-order-table td {
+        padding: 0.5rem;
+        font-size: 0.76rem;
+    }
+}
+
+.qurbani-wizard-page .qurbani-choose-another-btn {
+    width: 100%;
+    margin-top: 0.75rem;
+}
+
+.qurbani-wizard-page .qurbani-table-actions {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.qurbani-wizard-page .qurbani-table-edit {
+    min-height: 34px;
+    padding: 0.42rem 0.72rem;
+    color: var(--deep);
+    background: var(--gold-soft);
+    border: 1px solid rgba(219, 169, 52, 0.45);
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-table-actions {
+        flex-direction: column;
+    }
+}
+
+/* Final step action layout: 20% previous, 80% submit */
+.qurbani-wizard-page .qurbani-wizard-step[data-step="5"] .qurbani-submit-btn {
+    width: 80%;
+    margin-left: auto;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-wizard-actions {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-prev-btn {
+    width: 100%;
+    min-width: 0;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-next-btn {
+    display: none !important;
+}
+
+@media (max-width: 560px) {
+    .qurbani-wizard-page .qurbani-wizard-step[data-step="5"] .qurbani-submit-btn {
+        width: 100%;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-wizard-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Put final Previous beside Submit button */
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    column-gap: 0.7rem;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-alert,
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-wizard-step[data-step="5"] {
+    grid-column: 1 / -1;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-wizard-step[data-step="5"] {
+    display: contents;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-step-heading,
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-summary-card {
+    grid-column: 1 / -1;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-submit-btn {
+    grid-column: 2;
+    grid-row: 4;
+    width: 100%;
+    margin: 0;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-wizard-actions {
+    grid-column: 1;
+    grid-row: 4;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-prev-btn {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 560px) {
+    .qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) {
+        display: block;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-wizard-step[data-step="5"] {
+        display: block;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-submit-btn {
+        margin-top: 0.8rem;
+    }
+
+    .qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="5"].is-active) .qurbani-wizard-actions {
+        margin-top: 0.7rem;
+    }
+}
+
+/* Token page payment details and action button fixes */
+.token-section > p:nth-of-type(n+3):nth-of-type(-n+6) {
+    margin-bottom: 0.55rem;
+}
+
+.token-section > p:nth-of-type(n+3):nth-of-type(-n+6) + p {
+    margin-top: 0.55rem;
+}
+
+.token-section > p:nth-of-type(5) {
+    margin-bottom: 0.8rem;
+}
+
+.token-section > p:nth-of-type(6) {
+    margin-top: 0.8rem;
+}
+
+.btn-print {
+    color: var(--deep);
+    background: var(--white);
+    border: 1px solid rgba(219, 169, 52, 0.55);
+}
+
+.btn-print:hover {
+    color: var(--deep);
+    background: var(--gold-soft);
+}
+
+.qurbani-wizard-page .qurbani-total-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.qurbani-wizard-page .qurbani-total-heading label {
+    margin: 0;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.qurbani-wizard-page .qurbani-total-heading select {
+    width: auto;
+    min-width: 86px;
+    min-height: 34px;
+    padding: 0.35rem 0.55rem;
+    font-size: 0.82rem;
+}
+
+/* Remove Step 4 order summary scrollbar after single-currency table */
+.qurbani-wizard-page .qurbani-order-table-wrap {
+    overflow-x: visible;
+}
+
+.qurbani-wizard-page .qurbani-order-table {
+    min-width: 0;
+    table-layout: fixed;
+}
+
+.qurbani-wizard-page .qurbani-order-table th,
+.qurbani-wizard-page .qurbani-order-table td {
+    white-space: normal;
+    word-break: break-word;
+}
+
+.qurbani-wizard-page .qurbani-order-table .qurbani-inline-name {
+    min-width: 0;
+    width: 100%;
+}
+
+.qurbani-wizard-page .qurbani-table-actions {
+    flex-wrap: wrap;
+}
+
+/* Step 4 action row: Previous | Choose Another | Next */
+.qurbani-wizard-page .qurbani-action-choose {
+    display: none;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="3"].is-active) .qurbani-wizard-actions {
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="3"].is-active) .qurbani-action-choose {
+    display: inline-flex;
+    width: 100%;
+    margin: 0;
+}
+
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="3"].is-active) .qurbani-prev-btn,
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="3"].is-active) .qurbani-next-btn {
+    width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 560px) {
+    .qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="3"].is-active) .qurbani-wizard-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bank-accounts {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0.75rem 0 1rem;
+}
+
+.bank-account-card {
+    padding: 0.85rem 1rem;
+    background: rgba(22, 128, 76, 0.08);
+    border-radius: var(--radius-sm);
+}
+
+.bank-account-card p {
+    margin: 0 0 0.35rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+.bank-account-card p:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Polished token action buttons */
+.token-section .cta-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    max-width: 520px;
+    margin: 1.2rem auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(12, 63, 42, 0.12);
+}
+
+.token-section .btn-download,
+.token-section .btn-print {
+    width: 100%;
+    min-height: 46px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    letter-spacing: 0.01em;
+}
+
+.token-section .btn-download {
+    color: var(--deep);
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    border: 1px solid rgba(219, 169, 52, 0.55);
+    box-shadow: 0 14px 26px rgba(219, 169, 52, 0.22);
+}
+
+.token-section .btn-print {
+    color: var(--deep);
+    background: var(--white);
+    border: 1px solid rgba(12, 63, 42, 0.18);
+    box-shadow: 0 10px 22px rgba(12, 63, 42, 0.08);
+}
+
+.token-section .btn-download:hover,
+.token-section .btn-print:hover {
+    transform: translateY(-2px);
+}
+
+.token-section .btn-print:hover {
+    background: rgba(22, 128, 76, 0.08);
+    border-color: rgba(22, 128, 76, 0.28);
+}
+
+@media (max-width: 560px) {
+    .token-section .cta-buttons {
+        grid-template-columns: 1fr;
+        max-width: none;
+    }
+}
+
+@media print {
+    .token-section .cta-buttons {
+        display: none !important;
+    }
+}
+
+/* Clean token print output without scrollbars */
+@media print {
+    .token-section {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 18px !important;
+        border: 1px solid #ddd !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    #token-order-summary,
+    .order-summary {
+        overflow: visible !important;
+        width: 100% !important;
+    }
+
+    #token-order-summary table,
+    .token-section table {
+        min-width: 0 !important;
+        width: 100% !important;
+        table-layout: fixed !important;
+        font-size: 10px !important;
+    }
+
+    #token-order-summary th,
+    #token-order-summary td,
+    .token-section th,
+    .token-section td {
+        padding: 6px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+    .token-section .cta-buttons {
+        display: none !important;
+    }
+}
+
+/* More compact print token sizing */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 10mm;
+    }
+
+    body {
+        font-size: 10px !important;
+        line-height: 1.3 !important;
+    }
+
+    .token-section {
+        padding: 12px !important;
+        border-radius: 8px !important;
+    }
+
+    .token-section h2 {
+        font-size: 20px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .token-section h3 {
+        font-size: 14px !important;
+        margin: 12px 0 6px !important;
+    }
+
+    .token-details {
+        gap: 6px !important;
+        margin: 8px 0 !important;
+    }
+
+    .token-details p,
+    .bank-account-card,
+    .token-section > p {
+        padding: 7px !important;
+        margin-bottom: 6px !important;
+        font-size: 9px !important;
+    }
+
+    .bank-accounts {
+        gap: 6px !important;
+        margin: 6px 0 8px !important;
+    }
+
+    .bank-account-card p {
+        font-size: 9px !important;
+        line-height: 1.25 !important;
+    }
+
+    #token-order-summary table,
+    .token-section table {
+        font-size: 8px !important;
+        line-height: 1.2 !important;
+    }
+
+    #token-order-summary th,
+    #token-order-summary td,
+    .token-section th,
+    .token-section td {
+        padding: 4px !important;
+    }
+}
+
+
+/* Mobile Step 4 table should scroll horizontally, not squeeze */
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-order-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .qurbani-wizard-page .qurbani-order-table {
+        min-width: 820px;
+        table-layout: auto;
+    }
+
+    .qurbani-wizard-page .qurbani-order-table th,
+    .qurbani-wizard-page .qurbani-order-table td {
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: normal;
+    }
+
+    .qurbani-wizard-page .qurbani-order-table .qurbani-inline-name {
+        min-width: 145px;
+    }
+
+    .qurbani-wizard-page .qurbani-table-actions {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+}
+
+/* Step 4 contained horizontal table scroll like dashboard tables */
+.qurbani-wizard-page .qurbani-order-table-wrap {
+    max-width: 100%;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
+}
+
+.qurbani-wizard-page .qurbani-order-table-wrap::-webkit-scrollbar {
+    height: 10px;
+}
+
+.qurbani-wizard-page .qurbani-order-table-wrap::-webkit-scrollbar-track {
+    background: rgba(12, 63, 42, 0.08);
+    border-radius: 999px;
+}
+
+.qurbani-wizard-page .qurbani-order-table-wrap::-webkit-scrollbar-thumb {
+    background: rgba(12, 63, 42, 0.45);
+    border-radius: 999px;
+}
+
+.qurbani-wizard-page .qurbani-order-table {
+    min-width: 900px !important;
+    width: max-content;
+    table-layout: auto !important;
+}
+
+.qurbani-wizard-page .qurbani-order-table th,
+.qurbani-wizard-page .qurbani-order-table td {
+    white-space: nowrap !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+}
+
+.qurbani-wizard-page .qurbani-order-package span {
+    white-space: normal;
+    min-width: 90px;
+}
+
+.qurbani-wizard-page .qurbani-order-table .qurbani-inline-name {
+    min-width: 160px;
+}
+
+.qurbani-wizard-page .qurbani-table-actions {
+    flex-wrap: nowrap !important;
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-order-table {
+        min-width: 900px !important;
+    }
+}
+
+/* Desktop Step 4 table fits normally; horizontal scroll only on mobile */
+@media (min-width: 761px) {
+    .qurbani-wizard-page .qurbani-order-table-wrap {
+        overflow-x: visible !important;
+    }
+
+    .qurbani-wizard-page .qurbani-order-table {
+        width: 100% !important;
+        min-width: 0 !important;
+        table-layout: fixed !important;
+    }
+
+    .qurbani-wizard-page .qurbani-order-table th,
+    .qurbani-wizard-page .qurbani-order-table td {
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .qurbani-wizard-page .qurbani-order-table .qurbani-inline-name {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-order-table-wrap {
+        overflow-x: auto !important;
+    }
+
+    .qurbani-wizard-page .qurbani-order-table {
+        width: max-content !important;
+        min-width: 900px !important;
+        table-layout: auto !important;
+    }
+}
+
+/* Desktop Step 4 table column/action polish */
+@media (min-width: 761px) {
+    .qurbani-wizard-page .qurbani-order-table th:nth-child(1),
+    .qurbani-wizard-page .qurbani-order-table td:nth-child(1) { width: 14%; }
+    .qurbani-wizard-page .qurbani-order-table th:nth-child(2),
+    .qurbani-wizard-page .qurbani-order-table td:nth-child(2) { width: 13%; }
+    .qurbani-wizard-page .qurbani-order-table th:nth-child(3),
+    .qurbani-wizard-page .qurbani-order-table td:nth-child(3) { width: 15%; }
+    .qurbani-wizard-page .qurbani-order-table th:nth-child(4),
+    .qurbani-wizard-page .qurbani-order-table td:nth-child(4) { width: 16%; }
+    .qurbani-wizard-page .qurbani-order-table th:nth-child(5),
+    .qurbani-wizard-page .qurbani-order-table td:nth-child(5) { width: 9%; }
+    .qurbani-wizard-page .qurbani-order-table th:nth-child(6),
+    .qurbani-wizard-page .qurbani-order-table td:nth-child(6) { width: 14%; }
+    .qurbani-wizard-page .qurbani-order-table th:nth-child(7),
+    .qurbani-wizard-page .qurbani-order-table td:nth-child(7) { width: 19%; }
+
+    .qurbani-wizard-page .qurbani-table-actions {
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 0.35rem;
+    }
+
+    .qurbani-wizard-page .qurbani-table-edit,
+    .qurbani-wizard-page .qurbani-table-remove {
+        min-width: 62px;
+        padding: 0.38rem 0.55rem;
+        white-space: nowrap;
+        word-break: normal;
+    }
+
+    .qurbani-wizard-page .qurbani-order-package {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+    }
+
+    .qurbani-wizard-page .qurbani-order-package img {
+        width: 34px;
+        height: 28px;
+    }
+}
+
+/* Reduce extra height in Step 4 table green header */
+.qurbani-wizard-page .qurbani-order-table th {
+    padding-top: 0.45rem !important;
+    padding-bottom: 0.45rem !important;
+    line-height: 1.15 !important;
+    vertical-align: middle !important;
+}
+
+.qurbani-wizard-page .qurbani-order-table thead tr {
+    height: auto !important;
+}
+
+/* Contained mobile horizontal scroll for order summary tables */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.qurbani-wizard-page,
+.qurbani-wizard-page main,
+.qurbani-wizard-page .qurbani-wizard,
+.qurbani-wizard-page .qurbani-added-items,
+.qurbani-wizard-page .qurbani-summary-card,
+.token-section,
+#token-order-summary {
+    max-width: 100%;
+}
+
+.table-scroll-helper {
+    display: none;
+    margin: 0 0 0.45rem;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.table-scroll-wrapper,
+.qurbani-order-table-wrap,
+#token-order-summary {
+    width: 100%;
+    max-width: 100%;
+}
+
+.order-summary-table th,
+.order-summary-table td,
+.qurbani-order-table th,
+.qurbani-order-table td,
+#token-order-summary table th,
+#token-order-summary table td {
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+.qurbani-table-actions,
+.qurbani-table-edit,
+.qurbani-table-remove,
+.order-summary-table button,
+.qurbani-order-table button {
+    white-space: nowrap;
+    min-width: max-content;
+}
+
+@media (min-width: 761px) {
+    .table-scroll-wrapper,
+    .qurbani-order-table-wrap,
+    #token-order-summary {
+        overflow-x: visible !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-wizard,
+    .qurbani-wizard-page .qurbani-added-items,
+    .qurbani-wizard-page .qurbani-summary-card,
+    .token-section {
+        overflow-x: hidden !important;
+    }
+
+    .table-scroll-helper {
+        display: block;
+    }
+
+    .table-scroll-wrapper,
+    .qurbani-order-table-wrap,
+    #token-order-summary {
+        display: block;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-gutter: stable;
+    }
+
+    .order-summary-table,
+    .qurbani-order-table,
+    #token-order-summary table {
+        width: max-content !important;
+        min-width: 760px !important;
+        table-layout: auto !important;
+        border-collapse: collapse;
+    }
+
+    .order-summary-table th,
+    .order-summary-table td,
+    .qurbani-order-table th,
+    .qurbani-order-table td,
+    #token-order-summary table th,
+    #token-order-summary table td {
+        white-space: nowrap !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        font-size: 12px !important;
+        padding: 10px 12px !important;
+        line-height: 1.35 !important;
+    }
+
+    .qurbani-order-package span {
+        white-space: normal !important;
+        min-width: 90px;
+    }
+
+    .qurbani-order-table .qurbani-inline-name {
+        min-width: 150px !important;
+        width: 150px !important;
+    }
+
+    .qurbani-table-actions {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 0.35rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .order-summary-table,
+    .qurbani-order-table,
+    #token-order-summary table {
+        min-width: 720px !important;
+    }
+}
+
+/* Remove extra blank space after Step 4 table action column */
+@media (min-width: 761px) {
+    .qurbani-wizard-page #added-items-list .qurbani-order-table-wrap {
+        overflow-x: hidden !important;
+    }
+
+    .qurbani-wizard-page #added-items-list .qurbani-order-table {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        table-layout: fixed !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page #added-items-list .qurbani-order-table {
+        width: 760px !important;
+        min-width: 760px !important;
+        max-width: 760px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .qurbani-wizard-page #added-items-list .qurbani-order-table {
+        width: 720px !important;
+        min-width: 720px !important;
+        max-width: 720px !important;
+    }
+}
+
+/* Remove Step 4 table wrapper inner padding/gap on desktop */
+@media (min-width: 761px) {
+    .qurbani-wizard-page #added-items-list .qurbani-order-table-wrap.table-scroll-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        box-sizing: border-box;
+    }
+
+    .qurbani-wizard-page #added-items-list .qurbani-order-table-wrap.table-scroll-wrapper .qurbani-order-table.order-summary-table {
+        display: table !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        table-layout: fixed !important;
+    }
+}
+
+/* Make currency selector more prominent */
+.qurbani-wizard-page .qurbani-total-heading select#currency-select {
+    min-width: 104px;
+    min-height: 40px;
+    padding: 0.45rem 0.75rem;
+    color: var(--deep);
+    background: var(--gold-soft);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    font-weight: 900;
+    box-shadow: 0 8px 18px rgba(219, 169, 52, 0.18);
+    cursor: pointer;
+}
+
+.qurbani-wizard-page .qurbani-total-heading label[for="currency-select"] {
+    color: var(--deep);
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-total-heading select#currency-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(219, 169, 52, 0.28);
+}
+
+.qurbani-wizard-page .qurbani-table-save {
+    min-height: 34px;
+    padding: 0.42rem 0.72rem;
+    color: var(--white);
+    background: var(--green);
+    border: 1px solid rgba(22, 128, 76, 0.5);
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-row-package,
+.qurbani-wizard-page .qurbani-row-type,
+.qurbani-wizard-page .qurbani-row-waqf,
+.qurbani-wizard-page .qurbani-row-qty {
+    min-height: 34px;
+    width: 100%;
+    padding: 0.42rem 0.5rem;
+    font-size: 0.78rem;
+    border-radius: 10px;
+}
+
+/* Remove white trailing strip in Step 4 summary table */
+@media (min-width: 761px) {
+    .qurbani-wizard-page #added-items-list .qurbani-order-table-wrap {
+        background: rgba(12, 63, 42, 0.035) !important;
+        border-radius: 14px !important;
+    }
+
+    .qurbani-wizard-page #added-items-list .qurbani-order-table {
+        border-radius: 14px !important;
+        overflow: hidden !important;
+        background: rgba(12, 63, 42, 0.035) !important;
+    }
+
+    .qurbani-wizard-page #added-items-list .qurbani-order-table tbody td:last-child {
+        background: var(--white) !important;
+    }
+
+    .qurbani-wizard-page #added-items-list .qurbani-order-table tfoot td {
+        background: rgba(12, 63, 42, 0.035) !important;
+    }
+}
+
+/* Match Step 4 action column background with the table row */
+.qurbani-wizard-page #added-items-list .qurbani-order-table tbody td {
+    background: rgba(12, 63, 42, 0.035) !important;
+}
+
+.qurbani-wizard-page #added-items-list .qurbani-order-table tbody td:last-child {
+    background: rgba(12, 63, 42, 0.035) !important;
+}
+
+.qurbani-wizard-page #added-items-list .qurbani-order-table tbody tr:nth-child(odd) td {
+    background: rgba(12, 63, 42, 0.025) !important;
+}
+
+.qurbani-wizard-page #added-items-list .qurbani-order-table tfoot td:last-child {
+    background: rgba(12, 63, 42, 0.055) !important;
+}
+
+/* Restore Step 4 table body cells to white */
+.qurbani-wizard-page #added-items-list .qurbani-order-table tbody td,
+.qurbani-wizard-page #added-items-list .qurbani-order-table tbody td:last-child,
+.qurbani-wizard-page #added-items-list .qurbani-order-table tbody tr:nth-child(odd) td {
+    background: var(--white) !important;
+}
+
+/* Rebuilt Step 4 order summary grid table */
+.qurbani-wizard-page .qurbani-order-grid-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(12, 63, 42, 0.1);
+    border-radius: 14px;
+    background: var(--white);
+}
+
+.qurbani-wizard-page .qurbani-order-grid {
+    width: 100%;
+    display: grid;
+    background: var(--white);
+}
+
+.qurbani-wizard-page .qurbani-order-grid-head,
+.qurbani-wizard-page .qurbani-order-grid-row {
+    display: grid;
+    grid-template-columns: 14% 13% 16% 16% 10% 14% 17%;
+}
+
+.qurbani-wizard-page .qurbani-order-grid-head {
+    color: var(--white);
+    background: var(--deep);
+    border-radius: 13px 13px 0 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+}
+
+.qurbani-wizard-page .qurbani-order-grid-head > div,
+.qurbani-wizard-page .qurbani-order-grid-row > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 0.72rem 0.55rem;
+    border-right: 1px solid rgba(12, 63, 42, 0.08);
+    text-align: center;
+}
+
+.qurbani-wizard-page .qurbani-order-grid-head > div:last-child,
+.qurbani-wizard-page .qurbani-order-grid-row > div:last-child {
+    border-right: 0;
+}
+
+.qurbani-wizard-page .qurbani-order-grid-row {
+    background: var(--white);
+    border-bottom: 1px solid rgba(12, 63, 42, 0.08);
+}
+
+.qurbani-wizard-page .qurbani-order-grid-foot {
+    display: grid;
+    grid-template-columns: 69% 14% 17%;
+    background: rgba(12, 63, 42, 0.08);
+    color: var(--deep);
+    font-weight: 900;
+}
+
+.qurbani-wizard-page .qurbani-order-grid-foot > div {
+    padding: 0.75rem 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qurbani-wizard-page .qurbani-order-grid-foot > div:first-child {
+    justify-content: flex-end;
+}
+
+.qurbani-wizard-page .qurbani-order-grid-wrap .qurbani-order-package {
+    width: 100%;
+}
+
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-order-grid-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .qurbani-wizard-page .qurbani-order-grid {
+        width: 760px;
+        min-width: 760px;
+    }
+
+    .qurbani-wizard-page .qurbani-order-grid-head,
+    .qurbani-wizard-page .qurbani-order-grid-row {
+        grid-template-columns: 110px 100px 145px 150px 80px 110px 165px;
+    }
+
+    .qurbani-wizard-page .qurbani-order-grid-foot {
+        grid-template-columns: 585px 110px 165px;
+    }
+}
+
+/* Mobile Step 4 grid table: keep readable column widths and scroll */
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-order-grid {
+        width: 980px !important;
+        min-width: 980px !important;
+    }
+
+    .qurbani-wizard-page .qurbani-order-grid-head,
+    .qurbani-wizard-page .qurbani-order-grid-row {
+        grid-template-columns: 170px 150px 130px 190px 90px 130px 150px !important;
+    }
+
+    .qurbani-wizard-page .qurbani-order-grid-foot {
+        grid-template-columns: 730px 130px 150px !important;
+    }
+
+    .qurbani-wizard-page .qurbani-order-grid-head > div,
+    .qurbani-wizard-page .qurbani-order-grid-row > div {
+        padding: 0.75rem 0.7rem !important;
+        white-space: nowrap !important;
+    }
+
+    .qurbani-wizard-page .qurbani-inline-name,
+    .qurbani-wizard-page .qurbani-row-package,
+    .qurbani-wizard-page .qurbani-row-type,
+    .qurbani-wizard-page .qurbani-row-waqf,
+    .qurbani-wizard-page .qurbani-row-qty {
+        min-width: 140px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .qurbani-wizard-page .qurbani-order-grid {
+        width: 980px !important;
+        min-width: 980px !important;
+    }
+}
+
+.payment-details-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.78fr);
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.receipt-whatsapp-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 190px;
+    padding: 1.2rem;
+    background: var(--white);
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-md);
+    box-shadow: 0 18px 40px rgba(219, 169, 52, 0.16);
+}
+
+.receipt-whatsapp-box strong {
+    color: var(--deep);
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.receipt-whatsapp-box p {
+    margin: 0.55rem 0 1rem;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0.75rem 1rem;
+    color: var(--white) !important;
+    background: #25d366;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+}
+
+@media (max-width: 760px) {
+    .payment-details-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Collection Form - Institute of Islamic Sciences, Islamabad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-background">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="image/logo.svg" alt="Institute Logo">
+                <h1>Institute of Islamic Sciences, Islamabad</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="order.html">Book Qurbani</a>
+                <a href="skin.html">Skin Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <div class="step-card">
+                <span class="step-label">Skin Appeal</span>
+                <h2>Skin Collection Form</h2>
+                <h3 lang="ur" dir="rtl">قربانی کی کھال</h3>
+                <p>Donate the skin of the sacrificed animal for needy students.</p>
+                <div class="highlight-box">
+                    <p><strong>Important Note:</strong> Skin collection is available only from Rawalpindi, Islamabad, and nearby areas. Skins cannot be collected from distant locations.</p>
+                </div>
+
+                <form id="skin-form">
+                <div class="form-group">
+                    <label for="skin-type">Skin Type / Animal Type *</label>
+                    <select id="skin-type" required>
+                        <option value="">Select Skin Type</option>
+                        <option value="Cow">Cow</option>
+                        <option value="Goat">Goat</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="skin-quantity">Skin Quantity *</label>
+                    <input type="number" id="skin-quantity" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="collection-day">Collection Day *</label>
+                    <select id="collection-day" required><option value="">Select Eid Day</option><option value="Eid Day 1">Eid Day 1</option><option value="Eid Day 2">Eid Day 2</option><option value="Eid Day 3">Eid Day 3</option></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="suitable-time">Suitable Time *</label>
+                    <input type="time" id="suitable-time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="donor-name">Donor Name *</label>
+                    <input type="text" id="donor-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="donor-contact">Donor Contact Number *</label>
+                    <input type="number" id="donor-contact" min="100000000" max="99999999999999" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="donor-address">Donor Address *</label>
+                    <textarea id="donor-address" required></textarea>
+                </div>
+
+                <button type="button" id="submit-skin-btn" class="btn-submit">Submit Skin Collection Appeal</button>
+            </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Institute of Islamic Sciences, Islamabad</p>
+            <p>Address: Institute of Islamic Sciences, Islamabad, Wadi-e-ilm, Toll Plaza, Main Murree Rd, Islamabad, Pakistan</p>
+            <p>Contact: 0336 5363 550 | 0321 5821 083</p>
+            <span class="footer-links"><a href="terms.html">Terms & Conditions</a> | <a href="privacy.html">Privacy Policy</a></span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
