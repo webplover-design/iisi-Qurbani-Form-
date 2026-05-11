@@ -89,11 +89,11 @@ nav a:hover { color: var(--white); background: rgba(255, 255, 255, 0.12); border
     animation: riseIn 0.75s ease both;
 }
 
-.hero-content::before { content: "1446 AH"; position: absolute; right: clamp(1rem, 4vw, 3rem); top: 1.2rem; z-index: -1; font-family: 'Fraunces', serif; font-size: clamp(4rem, 14vw, 11rem); font-weight: 750; line-height: 1; color: rgba(255, 255, 255, 0.055); white-space: nowrap; }
+.hero-content::before { content: "1447 AH"; position: absolute; right: clamp(1rem, 4vw, 3rem); top: 1.2rem; z-index: -1; font-family: 'Fraunces', serif; font-size: clamp(4rem, 14vw, 11rem); font-weight: 750; line-height: 1; color: rgba(255, 255, 255, 0.055); white-space: nowrap; }
 .hero-content h2 { max-width: 690px; margin-bottom: 0.45rem; font-family: 'Fraunces', serif; font-size: clamp(2.7rem, 7vw, 6.6rem); line-height: 0.94; letter-spacing: -0.075em; color: var(--gold-soft); }
-.hero-content h3 { margin-bottom: 1.3rem; font-family: 'Amiri', serif; font-size: clamp(2rem, 5vw, 4.7rem); line-height: 1; color: var(--white); }
+.ijtimai-qurbani-title { display: block; width: min(100%, 460px); margin: 0 0 1.3rem; }
 .hero-content p { max-width: 610px; margin-bottom: 1rem; color: rgba(255, 255, 255, 0.84); font-size: clamp(1rem, 1.5vw, 1.17rem); }
-.hero-content > p:first-of-type { display: inline-flex; width: fit-content; margin-bottom: 1.2rem; padding: 0.5rem 0.85rem; color: #163426; background: var(--gold-soft); border-radius: 999px; font-weight: 900; letter-spacing: 0.01em; }
+.supervised-title { display: block; width: min(100%, 410px); margin: 0 0 1.2rem; }
 .hero-image-wrap { position: absolute; right: clamp(-4rem, -3vw, -1.5rem); bottom: -1.5rem; width: min(42vw, 390px); pointer-events: none; filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.35)); }
 .cow-illustration { width: 100%; display: block; transform: rotate(-3deg); }
 
@@ -3154,4 +3154,577 @@ body {
     .payment-details-grid {
         grid-template-columns: 1fr;
     }
+}
+.whatsapp-contact { display: inline-flex; align-items: center; gap: 0.35rem; color: inherit; font-weight: 800; text-decoration: none; }
+.whatsapp-contact:hover { color: #25d366; }
+.whatsapp-icon { display: inline-flex; width: 1.15em; height: 1.15em; flex: 0 0 auto; background: url("image/whatsapp.png") center / contain no-repeat; }
+
+.qurbani-share-price-panel { margin-bottom: 1.1rem; padding: 1rem; border: 1px solid rgba(20, 88, 60, 0.16); border-radius: 18px; background: rgba(255, 255, 255, 0.72); }
+.qurbani-share-price-panel > label { display: block; margin-bottom: 0.75rem; color: var(--green-dark); font-weight: 900; }
+
+.qurbani-share-price-panel.is-hidden { display: none; }
+
+.qurbani-share-price-panel .qurbani-type-grid { gap: 0.65rem; }
+.qurbani-share-price-panel .qurbani-choice-card { min-height: 76px; padding: 0.75rem 0.85rem; gap: 0.35rem; }
+.qurbani-share-price-panel .qurbani-choice-card strong, .qurbani-share-price-panel .qurbani-choice-card small { margin: 0; }
+
+.qurbani-wizard-page .qurbani-order-grid-row { font-size: 0.86rem; }
+.qurbani-wizard-page .qurbani-order-grid-row input { font-size: 0.82rem; }
+.qurbani-wizard-page .qurbani-order-grid-row .qurbani-order-package span { font-size: 0.9rem; line-height: 1.25; }
+.qurbani-wizard-page .qurbani-order-grid-row .qurbani-table-actions button { font-size: 0.75rem; padding: 0.55rem 0.7rem; }
+
+.faq-section { padding: clamp(2.5rem, 6vw, 5rem) 0; }
+.faq-heading { max-width: 780px; margin: 0 auto 2rem; text-align: center; }
+.faq-heading span { display: inline-flex; margin-bottom: 0.7rem; padding: 0.35rem 0.8rem; border: 1px solid rgba(219, 169, 52, 0.55); border-radius: 999px; color: var(--deep); background: rgba(247, 223, 154, 0.5); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.faq-heading h2 { margin-bottom: 0.75rem; font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 4.2vw, 3.7rem); line-height: 1; color: #111; }
+.faq-heading p { color: rgba(12, 63, 42, 0.72); font-size: 1.05rem; }
+.faq-list { display: grid; gap: 0.75rem; max-width: 880px; margin: 0 auto; }
+.faq-item { border-radius: 15px; overflow: hidden; background: var(--deep); color: #fff; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08); }
+.faq-item summary { position: relative; display: flex; align-items: center; gap: 0.65rem; padding: 0.9rem 1.15rem; cursor: pointer; list-style: none; font-family: 'Fraunces', serif; font-size: clamp(1rem, 2.2vw, 1.65rem); font-weight: 750; line-height: 1.15; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before { content: '+'; flex: 0 0 auto; font-family: inherit; font-size: 1.35em; line-height: 0.8; }
+.faq-item[open] summary::before { content: '−'; }
+.faq-item p { margin: 0; padding: 0 1.15rem 1rem 3rem; color: rgba(255, 255, 255, 0.86); font-size: 0.92rem; line-height: 1.55; }
+@media (max-width: 640px) { .faq-item summary { padding: 1rem; } .faq-item p { padding: 0 1rem 1rem 2.8rem; } }
+/* Hero alignment polish */
+.hero-content { display: flex; flex-direction: column; align-items: flex-start; overflow: hidden; }
+.ijtimai-qurbani-title { width: min(100%, 620px); margin: 0 0 1.2rem; }
+.supervised-title { width: min(100%, 360px); margin: 0.15rem 0 1.4rem; }
+.hero-content p { max-width: 620px; }
+.hero-content .cta-buttons { position: relative; z-index: 2; }
+.hero-image-wrap { right: clamp(0.5rem, 3vw, 2.5rem); bottom: -0.35rem; width: min(30vw, 270px); }
+@media (max-width: 900px) { .ijtimai-qurbani-title { width: min(100%, 520px); } .hero-image-wrap { opacity: 0.9; width: 230px; right: -1rem; } }
+@media (max-width: 640px) { .hero-content { padding-bottom: 11rem; } .ijtimai-qurbani-title { width: 100%; } .supervised-title { width: min(100%, 300px); } .hero-image-wrap { width: 190px; right: -1.5rem; } }
+/* Center hero heading and Qurbani logo */
+.hero-content h2 { margin-left: auto; margin-right: auto; text-align: center; }
+.ijtimai-qurbani-title { width: min(100%, 430px); margin-left: auto; margin-right: auto; }
+@media (max-width: 640px) { .ijtimai-qurbani-title { width: min(100%, 340px); } }
+.hero-title-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(140px, 240px); align-items: center; gap: clamp(1rem, 4vw, 3rem); margin-bottom: 1.2rem; }
+.hero-title-row h2 { margin: 0; text-align: left; }
+.hero-title-row .ijtimai-qurbani-title { width: min(100%, 240px); margin: 0; justify-self: end; }
+@media (max-width: 760px) { .hero-title-row { grid-template-columns: 1fr; gap: 0.9rem; } .hero-title-row h2 { text-align: left; } .hero-title-row .ijtimai-qurbani-title { width: min(100%, 220px); justify-self: start; } }
+
+.qurbani-wizard-page .qurbani-icon-btn { width: 38px; height: 38px; padding: 0; border-radius: 50%; }
+.qurbani-wizard-page .qurbani-icon-btn svg { width: 18px; height: 18px; fill: currentColor; pointer-events: none; }
+.qurbani-wizard-page .qurbani-table-actions { gap: 0.45rem; }
+.qurbani-step-one-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+    gap: 1rem;
+    align-items: start;
+}
+
+.qurbani-currency-card,
+.qurbani-package-total-card {
+    padding: 1rem;
+    border: 1px solid rgba(20, 88, 60, 0.16);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.qurbani-currency-card label {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: var(--green-dark);
+    font-weight: 900;
+}
+
+.qurbani-currency-card select {
+    width: 100%;
+}
+
+.qurbani-currency-card p {
+    margin: 0.7rem 0 0;
+    color: rgba(12, 63, 42, 0.68);
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.qurbani-multi-package-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.qurbani-multi-package-card {
+    min-height: 230px;
+    align-items: flex-start;
+}
+
+.qurbani-multi-package-card.is-selected {
+    border-color: rgba(20, 137, 86, 0.78);
+    box-shadow: 0 16px 34px rgba(20, 137, 86, 0.13);
+}
+
+.qurbani-card-quantity {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(20, 88, 60, 0.12);
+}
+
+.qurbani-card-quantity > span {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--green-dark);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.qurbani-card-quantity-control {
+    grid-template-columns: 42px minmax(60px, 1fr) 42px;
+}
+
+.qurbani-card-quantity-control input {
+    min-width: 0;
+}
+
+.qurbani-package-total-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    color: var(--deep);
+    font-weight: 800;
+}
+
+.qurbani-order-grid-no-qty .qurbani-order-grid-head,
+.qurbani-order-grid-no-qty .qurbani-order-grid-row {
+    grid-template-columns: 14% 15% 15% 14% 17% 12% 13%;
+}
+
+.qurbani-order-grid-no-qty .qurbani-order-grid-foot {
+    grid-template-columns: 75% 12% 13%;
+}
+
+@media (max-width: 900px) {
+    .qurbani-step-one-grid,
+    .qurbani-multi-package-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .qurbani-order-grid-no-qty {
+        min-width: 960px;
+    }
+}
+
+.qurbani-card-quantity-control input { position: static; width: 100%; height: auto; opacity: 1; pointer-events: auto; appearance: textfield; }
+
+.qurbani-wizard-page .qurbani-card-quantity-control input { position: static; width: 100%; height: auto; opacity: 1; pointer-events: auto; appearance: textfield; }
+
+@media (min-width: 1024px) { .qurbani-multi-package-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .qurbani-multi-package-card { min-height: 210px; padding: 0.75rem; } .qurbani-multi-package-card .qurbani-package-image { width: 86px; height: 58px; } .qurbani-multi-package-card strong { font-size: 0.95rem; } .qurbani-multi-package-card em { font-size: 1rem; } .qurbani-multi-package-card small { font-size: 0.72rem; } }
+@media (min-width: 760px) and (max-width: 1023px) { .qurbani-multi-package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.qurbani-step-one-grid { display: grid; gap: 1rem; }
+.qurbani-step-one-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(220px, 0.95fr); gap: 0.8rem; align-items: stretch; }
+.qurbani-step-one-top .qurbani-choice-card,
+.qurbani-step-one-top .qurbani-currency-card { min-height: 118px; height: 100%; }
+.qurbani-step-one-detail .qurbani-conditional-panel { margin-top: 0; }
+.qurbani-step-one-detail .qurbani-conditional-panel:not(.is-hidden) { display: block; width: 100%; }
+.qurbani-step-one-top .qurbani-currency-card p { display: none; }
+@media (max-width: 900px) { .qurbani-step-one-top { grid-template-columns: 1fr; } }
+.qurbani-step-one-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.qurbani-step-one-grid > .qurbani-currency-card { width: min(100%, 360px); }
+@media (max-width: 900px) { .qurbani-step-one-top { grid-template-columns: 1fr; } .qurbani-step-one-grid > .qurbani-currency-card { width: 100%; } }
+.qurbani-step-one-grid { grid-template-columns: minmax(0, 1fr) minmax(220px, 260px); align-items: start; }
+.qurbani-step-one-top { grid-column: 1; grid-row: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.qurbani-step-one-grid > .qurbani-currency-card { grid-column: 2; grid-row: 1; width: 100%; min-height: 118px; display: flex; flex-direction: column; justify-content: center; }
+.qurbani-step-one-detail { grid-column: 1 / -1; }
+.qurbani-step-one-top .qurbani-choice-card { padding: 0.75rem; }
+.qurbani-step-one-top .qurbani-choice-card strong { font-size: 0.9rem; line-height: 1.15; }
+.qurbani-step-one-top .qurbani-choice-card small { font-size: 0.72rem; line-height: 1.25; }
+@media (max-width: 900px) { .qurbani-step-one-grid { grid-template-columns: 1fr; } .qurbani-step-one-top, .qurbani-step-one-grid > .qurbani-currency-card, .qurbani-step-one-detail { grid-column: 1; grid-row: auto; } }
+.qurbani-step-one-grid { grid-template-columns: 1fr; }
+.qurbani-step-one-sketch { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: ". . currency" "students needy collection"; gap: 0.75rem; align-items: stretch; }
+.qurbani-waqf-students-card { grid-area: students; }
+.qurbani-waqf-needy-card { grid-area: needy; }
+.qurbani-step-one-sketch .qurbani-currency-card { grid-area: currency; width: 100%; min-height: 56px; padding: 0.7rem 0.85rem; }
+.qurbani-collection-card { grid-area: collection; }
+.qurbani-step-one-sketch .qurbani-choice-card { min-height: 84px; justify-content: center; text-align: center; padding: 0.9rem 2rem 0.9rem 1rem; }
+.qurbani-step-one-sketch .qurbani-choice-card strong { font-size: 0.95rem; line-height: 1.25; }
+.qurbani-step-one-sketch .qurbani-choice-card small { display: none; }
+.qurbani-step-one-sketch .qurbani-currency-card select { min-height: 42px; }
+.qurbani-step-one-detail { grid-column: 1; }
+@media (max-width: 900px) { .qurbani-step-one-sketch { grid-template-columns: 1fr; grid-template-areas: "students" "needy" "collection" "currency"; } }
+/* Clean Step 1 layout override */
+.qurbani-step-one-grid { display: grid; gap: 1rem; }
+.qurbani-step-one-sketch { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "students needy collection"; gap: 0.85rem; align-items: stretch; }
+.qurbani-step-one-sketch .qurbani-currency-card { grid-area: auto; }
+.qurbani-step-one-grid > .qurbani-currency-card,
+.qurbani-step-one-sketch .qurbani-currency-card { width: min(100%, 320px); min-height: auto; padding: 0.85rem; justify-self: start; }
+.qurbani-step-one-sketch .qurbani-choice-card { min-height: 112px; justify-content: center; padding: 1rem 2.3rem 1rem 1rem; text-align: center; }
+.qurbani-step-one-sketch .qurbani-choice-card strong { font-size: 1rem; line-height: 1.2; }
+@media (max-width: 900px) { .qurbani-step-one-sketch { grid-template-columns: 1fr; grid-template-areas: "students" "needy" "collection"; } .qurbani-step-one-grid > .qurbani-currency-card, .qurbani-step-one-sketch .qurbani-currency-card { width: 100%; } }
+.qurbani-step-heading-with-currency { display: grid; grid-template-columns: minmax(0, 1fr) minmax(190px, 280px); gap: 1rem; align-items: start; }
+.qurbani-step-heading-with-currency .qurbani-currency-card { width: 100%; min-height: auto; padding: 0.8rem; justify-self: end; }
+.qurbani-step-heading-with-currency .qurbani-currency-card label { margin-bottom: 0.45rem; }
+.qurbani-step-heading-with-currency .qurbani-currency-card select { min-height: 42px; }
+.qurbani-step-one-sketch { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "students needy collection"; }
+@media (max-width: 760px) { .qurbani-step-heading-with-currency { grid-template-columns: 1fr; } .qurbani-step-heading-with-currency .qurbani-currency-card { justify-self: stretch; } }
+.qurbani-step-one-sketch .qurbani-choice-card small { display: block; margin-top: 0.35rem; font-size: 0.74rem; line-height: 1.3; }
+
+.qurbani-step-heading-with-currency { grid-template-columns: 7fr 3fr; align-items: start; }
+.qurbani-step-heading-with-currency .qurbani-currency-card { width: 100%; max-width: none; }
+@media (max-width: 760px) { .qurbani-step-heading-with-currency { grid-template-columns: 1fr; } }
+/* Exact Step 1 requested layout */
+.qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 1.25rem;
+    align-items: start;
+    margin-bottom: 0.9rem;
+}
+.qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency h2 { margin-bottom: 0.35rem; }
+.qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency p { max-width: none; margin: 0; }
+.qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency .qurbani-currency-card {
+    width: 100%;
+    max-width: none;
+    min-height: 86px;
+    padding: 0.75rem;
+    align-self: start;
+}
+.qurbani-wizard-step[data-step="0"] .qurbani-step-one-grid { display: block; }
+.qurbani-wizard-step[data-step="0"] .qurbani-step-one-sketch {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas: "students needy collection";
+    gap: 0.85rem;
+    width: 100%;
+}
+.qurbani-wizard-step[data-step="0"] .qurbani-step-one-sketch .qurbani-choice-card {
+    min-height: 105px;
+    padding: 0.95rem 2.4rem 0.95rem 1rem;
+    justify-content: center;
+    text-align: center;
+}
+.qurbani-wizard-step[data-step="0"] .qurbani-step-one-sketch .qurbani-choice-card strong { font-size: 1rem; line-height: 1.2; }
+.qurbani-wizard-step[data-step="0"] .qurbani-step-one-sketch .qurbani-choice-card small { display: block; margin-top: 0.45rem; font-size: 0.74rem; line-height: 1.3; }
+@media (max-width: 760px) {
+    .qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency,
+    .qurbani-wizard-step[data-step="0"] .qurbani-step-one-sketch { grid-template-columns: 1fr; }
+}.qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency .qurbani-currency-card { justify-self: end; }
+.qurbani-wizard-page .qurbani-order-grid-row select { width: 100%; min-height: 40px; padding: 0.5rem 0.65rem; border: 1px solid rgba(20, 88, 60, 0.18); border-radius: 12px; background: #fff; color: var(--deep); font: inherit; font-size: 0.82rem; }
+.qurbani-order-grid-no-qty .qurbani-order-grid-head,
+.qurbani-order-grid-no-qty .qurbani-order-grid-row { grid-template-columns: 16% 17% 18% 19% 14% 16%; }
+.qurbani-order-grid-no-qty .qurbani-order-grid-foot { grid-template-columns: 70% 14% 16%; }
+.qurbani-wizard-page .qurbani-order-grid-row .qurbani-table-actions { justify-content: center; gap: 0.45rem; }
+.qurbani-wizard-page .qurbani-order-grid-row .qurbani-icon-btn,
+.qurbani-wizard-page .qurbani-order-grid-row .qurbani-table-save.qurbani-icon-btn,
+.qurbani-wizard-page .qurbani-order-grid-row .qurbani-table-remove.qurbani-icon-btn,
+.qurbani-wizard-page .qurbani-order-grid-row .qurbani-table-edit.qurbani-icon-btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    max-width: 38px;
+    max-height: 38px;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.qurbani-wizard-page .qurbani-order-grid-row .qurbani-icon-btn svg { width: 17px; height: 17px; fill: currentColor; }
+/* Reset old Step 4 action-row override after wizard restructure */
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="3"].is-active) .qurbani-wizard-actions {
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: none;
+}
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="3"].is-active) .qurbani-prev-btn,
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="3"].is-active) .qurbani-next-btn {
+    width: auto;
+    min-width: 130px;
+}
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="3"].is-active) .qurbani-next-btn {
+    min-width: 150px;
+}
+.qurbani-wizard-page .qurbani-wizard-actions .qurbani-submit-btn { display: none; }
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="4"].is-active) .qurbani-wizard-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="4"].is-active) .qurbani-next-btn { display: none !important; }
+.qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="4"].is-active) .qurbani-submit-btn {
+    display: inline-flex;
+    width: auto;
+    min-width: 260px;
+    margin: 0;
+}
+@media (max-width: 560px) {
+    .qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="4"].is-active) .qurbani-wizard-actions { flex-direction: column; }
+    .qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="4"].is-active) .qurbani-submit-btn,
+    .qurbani-wizard-page .qurbani-wizard:has(.qurbani-wizard-step[data-step="4"].is-active) .qurbani-prev-btn { width: 100%; }
+}
+.receipt-header-logo { display: block; width: min(100%, 760px); margin: 0 auto 1.4rem; border-radius: 12px; }
+.token-section .cta-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin-top: 1.4rem; }
+.token-section .btn-download,
+.token-section .btn-print { width: 100%; min-height: 50px; border-radius: 999px; font-weight: 900; }
+.token-section .btn-download { color: #173226; background: linear-gradient(135deg, var(--gold-soft), var(--gold)); box-shadow: 0 14px 26px rgba(219, 169, 52, 0.26); }
+.token-section .btn-print { color: var(--deep); background: #fff; border: 1px solid rgba(12, 63, 42, 0.18); box-shadow: 0 10px 22px rgba(12, 63, 42, 0.08); }
+.token-section .btn-print:hover { color: #fff; background: var(--deep); }
+.token-section.is-capturing { width: 980px; max-width: 980px; }
+.token-section.is-capturing .receipt-header-logo { display: block; }
+@media print {
+    header, footer, .token-section .cta-buttons { display: none !important; }
+    body { background: #fff !important; }
+    .token-section { width: 100% !important; max-width: none !important; margin: 0 !important; box-shadow: none !important; border: 0 !important; background: #fff !important; }
+    .receipt-header-logo { display: block !important; width: 100% !important; max-width: 760px !important; margin: 0 auto 18px !important; }
+    #token-order-summary { overflow: visible !important; }
+    #token-order-summary table { width: 100% !important; min-width: 0 !important; font-size: 10px !important; }
+}
+@media (max-width: 560px) { .token-section .cta-buttons { grid-template-columns: 1fr; } }
+.receipt-download-clone { position: fixed; left: -10000px; top: 0; width: 980px; max-width: 980px; padding: 32px; background: #fffbf2; color: #183b2b; border: 0; box-shadow: none; overflow: visible; }
+.receipt-download-clone::before { display: none; }
+.receipt-download-clone .receipt-download-header { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 96px; margin-bottom: 22px; border: 2px solid #0c3f2a; border-radius: 16px; color: #0c3f2a; background: #f7df9a; text-align: center; }
+.receipt-download-clone .receipt-download-header strong { font-family: 'Fraunces', serif; font-size: 28px; line-height: 1.1; }
+.receipt-download-clone .receipt-download-header span { margin-top: 8px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.receipt-download-clone #token-order-summary { overflow: visible; }
+.receipt-download-clone table { min-width: 0; width: 100%; }
+/* Final Step 1 currency alignment */
+.qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    align-items: start;
+}
+.qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency .qurbani-currency-card {
+    justify-self: end !important;
+    align-self: start;
+    width: 260px !important;
+    max-width: 260px !important;
+}
+@media (max-width: 760px) {
+    .qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency {
+        grid-template-columns: 1fr;
+    }
+    .qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency .qurbani-currency-card {
+        justify-self: stretch !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+}
+
+/* Final mobile responsiveness overrides */
+@media (max-width: 760px) {
+    html, body { width: 100%; overflow-x: hidden; }
+    .container { width: min(100% - 24px, 1180px); }
+
+    header { position: relative; padding: 0.75rem 0; }
+    header .container { flex-direction: column; align-items: center; gap: 0.8rem; text-align: center; }
+    .logo { justify-content: center; }
+    .logo img { width: 44px; height: 44px; border-radius: 12px; }
+    .logo h1 { max-width: 280px; font-size: 1rem; }
+    nav { width: 100%; justify-content: center; gap: 0.35rem; }
+    nav a { padding: 0.48rem 0.65rem; font-size: 0.78rem; }
+
+    .hero { padding: 1rem 0.75rem 1.5rem; min-height: auto; place-items: start center; }
+    .hero-content { width: 100%; min-height: auto; padding: 1.2rem 1rem 10rem; border-radius: 22px; }
+    .hero-title-row { grid-template-columns: 1fr; gap: 0.65rem; }
+    .hero-title-row h2 { font-size: clamp(1.7rem, 10vw, 2.7rem); text-align: left; }
+    .hero-title-row .ijtimai-qurbani-title { width: min(100%, 210px); justify-self: start; }
+    .supervised-title { width: min(100%, 260px); }
+    .hero-content p { max-width: 100%; font-size: 0.88rem; line-height: 1.45; }
+    .hero-image-wrap { width: 170px; right: -1.7rem; bottom: -0.5rem; }
+    .contact { margin-top: 0.9rem; padding-top: 0.8rem; }
+    .contact p { font-size: 0.8rem; }
+    .cta-buttons { flex-direction: column; align-items: stretch; }
+
+    .qurbani-wizard-page .qurbani-wizard-hero { padding: 1rem 0 0.6rem; }
+    .qurbani-wizard-page .qurbani-wizard-hero h2 { font-size: clamp(1.8rem, 10vw, 2.8rem); }
+    .qurbani-wizard-page .qurbani-wizard-hero p { font-size: 0.9rem; }
+    .qurbani-wizard-page .qurbani-wizard-shell { width: min(100% - 20px, 1040px); grid-template-columns: 1fr; gap: 0.8rem; }
+    .qurbani-wizard-page .qurbani-stepper { position: static; display: grid; grid-template-columns: 1fr; gap: 0.45rem; padding: 0.65rem; border-radius: 18px; }
+    .qurbani-wizard-page .qurbani-step-nav { min-height: 48px; padding: 0.55rem 0.65rem; }
+    .qurbani-wizard-page .qurbani-wizard { padding: 1rem; border-radius: 18px; }
+    .qurbani-wizard-page .qurbani-step-heading h2 { font-size: 1.45rem; line-height: 1.1; }
+    .qurbani-wizard-page .qurbani-step-heading p { font-size: 0.86rem; }
+    .qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency { grid-template-columns: 1fr; gap: 0.7rem; }
+    .qurbani-wizard-step[data-step="0"] .qurbani-step-heading-with-currency .qurbani-currency-card { width: 100% !important; max-width: none !important; justify-self: stretch !important; }
+    .qurbani-step-one-sketch, .qurbani-multi-package-grid { grid-template-columns: 1fr !important; grid-template-areas: "students" "needy" "collection" !important; }
+    .qurbani-step-one-sketch .qurbani-choice-card, .qurbani-multi-package-card { min-height: auto; padding: 0.85rem 2.2rem 0.85rem 0.9rem; }
+    .qurbani-package-total-card { flex-direction: column; align-items: flex-start; }
+    .qurbani-wizard-page .qurbani-details-grid { grid-template-columns: 1fr; }
+    .qurbani-wizard-page .qurbani-wizard-actions { display: flex !important; flex-direction: column; gap: 0.65rem; }
+    .qurbani-wizard-page .qurbani-prev-btn, .qurbani-wizard-page .qurbani-next-btn, .qurbani-wizard-page .qurbani-submit-btn { width: 100% !important; min-width: 0 !important; }
+
+    .qurbani-order-grid-wrap, #token-order-summary, .order-summary { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .qurbani-order-grid-no-qty { min-width: 880px; }
+    table { min-width: 760px; }
+
+    .form-section, .token-section, .faq-section { width: min(100% - 20px, 1040px); margin: 1rem auto 1.5rem; }
+    .step-card, .token-section { padding: 1rem; border-radius: 18px; }
+    form, .token-details, .payment-details-grid { grid-template-columns: 1fr !important; }
+    input, select, textarea { min-height: 46px; font-size: 0.9rem; }
+    .receipt-header-logo { width: 100%; }
+    .token-section .cta-buttons { grid-template-columns: 1fr; }
+
+    .faq-section { padding: 1.5rem 0; }
+    .faq-heading h2 { font-size: clamp(1.8rem, 11vw, 2.7rem); }
+    .faq-heading p { font-size: 0.9rem; }
+    .faq-item summary { font-size: 1rem; padding: 0.9rem; }
+    .faq-item p { padding: 0 0.9rem 0.9rem 2.5rem; font-size: 0.86rem; }
+
+    footer { padding: 1.4rem 0; }
+    footer .container { width: min(100% - 20px, 1180px); }
+    footer p, footer a, .footer-links { font-size: 0.8rem; overflow-wrap: anywhere; }
+}
+
+@media (max-width: 390px) {
+    nav a { font-size: 0.72rem; padding: 0.42rem 0.5rem; }
+    .logo h1 { font-size: 0.9rem; }
+    .qurbani-wizard-page .qurbani-step-nav strong { font-size: 0.78rem; }
+    .qurbani-wizard-page .qurbani-step-nav small { font-size: 0.68rem; }
+}
+/* Mobile stepper: one horizontal row */
+@media (max-width: 760px) {
+    .qurbani-wizard-page .qurbani-stepper {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 0.65rem !important;
+        overflow-x: auto;
+        padding: 0.7rem !important;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+    .qurbani-wizard-page .qurbani-stepper::-webkit-scrollbar { height: 0; }
+    .qurbani-wizard-page .qurbani-step-nav {
+        flex: 0 0 96px;
+        min-height: 86px !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0.65rem 0.5rem !important;
+        border-radius: 18px !important;
+        scroll-snap-align: start;
+    }
+    .qurbani-wizard-page .qurbani-step-nav span {
+        margin: 0 0 0.35rem;
+    }
+    .qurbani-wizard-page .qurbani-step-nav strong {
+        font-size: 0.78rem;
+        line-height: 1.1;
+    }
+    .qurbani-wizard-page .qurbani-step-nav small {
+        display: none;
+    }
+}
+.hero-image-wrap { width: min(45vw, 430px); }
+@media (max-width: 760px) { .hero-image-wrap { width: 195px; } }
+
+@media (max-width: 390px) {
+    .hero-title-row h2 { font-size: 2rem; }
+    .hero-title-row .ijtimai-qurbani-title { width: 165px; }
+    .supervised-title { width: 200px; }
+    .hero-image-wrap { width: 140px; }
+}
+/* Mobile homepage layout matching reference image */
+@media (max-width: 760px) {
+    .hero { padding: 0.85rem 0.55rem 1rem; }
+    .hero-content {
+        min-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.65rem 1.15rem 9.25rem;
+        border-radius: 28px;
+    }
+    .hero-content::before { display: none; }
+    .hero-title-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .hero-title-row h2 {
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+        font-size: clamp(2.25rem, 12vw, 4rem);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+    }
+    .hero-title-row .ijtimai-qurbani-title {
+        width: min(100%, 310px);
+        margin: 0 auto;
+        justify-self: center;
+    }
+    .supervised-title {
+        width: min(100%, 330px);
+        margin: 0.2rem auto 1.35rem;
+    }
+    .hero-content p {
+        max-width: 520px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        font-size: clamp(1rem, 4vw, 1.25rem);
+        line-height: 1.5;
+    }
+    .cta-buttons {
+        width: min(100%, 340px);
+        margin: 1.6rem auto 1.25rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+    .cta-buttons .btn {
+        width: 100%;
+        min-height: 58px;
+        font-size: 1.05rem;
+        border-radius: 999px;
+    }
+    .contact {
+        width: 100%;
+        max-width: 520px;
+        margin: 0.6rem auto 0;
+        padding-top: 1.15rem;
+    }
+    .contact p {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem 0.75rem;
+        text-align: center;
+        font-size: clamp(0.86rem, 3.5vw, 1.05rem);
+        line-height: 1.35;
+    }
+    .hero-image-wrap {
+        width: min(82vw, 360px);
+        right: 50%;
+        bottom: -0.4rem;
+        transform: translateX(50%);
+        filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.24));
+    }
+    .cow-illustration { transform: none; }
+}
+
+@media (max-width: 390px) {
+    .hero-content { padding: 1.35rem 0.95rem 8rem; }
+    .hero-title-row .ijtimai-qurbani-title { width: min(100%, 270px); }
+    .supervised-title { width: min(100%, 285px); }
+    .hero-content p { font-size: 0.95rem; }
+    .cta-buttons { width: min(100%, 300px); }
+    .cta-buttons .btn { min-height: 52px; font-size: 0.95rem; }
+    .hero-image-wrap { width: min(78vw, 300px); }
+}
+@media (max-width: 760px) {
+    .hero-image-wrap { margin-top: 30px; margin-right: 0; margin-bottom: 0; margin-left: 0; }
+}
+@media (max-width: 760px) {
+    .hero-content { padding-bottom: 13rem; }
+    .hero-image-wrap { bottom: -1.4rem; margin-top: 0; }
+    .contact { position: relative; z-index: 3; margin-bottom: 1rem; }
+}
+@media (max-width: 390px) {
+    .hero-content { padding-bottom: 12rem; }
+    .hero-image-wrap { bottom: -1.2rem; }
 }

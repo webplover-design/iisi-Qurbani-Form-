@@ -1,4 +1,4 @@
-# Institute of Islamic Sciences, Islamabad — Online Qurbani 2025 / 1446 AH
+﻿# Institute of Islamic Sciences, Islamabad — Online Qurbani 2026 / 1447 AH
 
 This is a simple, responsive website for collecting Qurbani orders and skin donation requests.
 

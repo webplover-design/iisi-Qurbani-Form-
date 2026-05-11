@@ -33,22 +33,19 @@
         <section class="qurbani-wizard-shell container" aria-label="Qurbani booking wizard">
             <aside class="qurbani-stepper" aria-label="Booking steps">
                 <button class="qurbani-step-nav is-active" type="button" data-step-target="0">
-                    <span>1</span><strong>Select Animal</strong><small>Package</small>
+                    <span>1</span><strong>Qurbani Type</strong><small>Currency</small>
                 </button>
                 <button class="qurbani-step-nav" type="button" data-step-target="1" disabled>
-                    <span>2</span><strong>Qurbani Type</strong><small>Waqf or Collection</small>
+                    <span>2</span><strong>Select Animal</strong><small>Packages</small>
                 </button>
                 <button class="qurbani-step-nav" type="button" data-step-target="2" disabled>
-                    <span>3</span><strong>Quantity</strong><small>Pricing</small>
+                    <span>3</span><strong>Qurbani By</strong><small>Name & Income</small>
                 </button>
                 <button class="qurbani-step-nav" type="button" data-step-target="3" disabled>
-                    <span>4</span><strong>Qurbani By</strong><small>Name</small>
+                    <span>4</span><strong>Your Details</strong><small>Contact</small>
                 </button>
                 <button class="qurbani-step-nav" type="button" data-step-target="4" disabled>
-                    <span>5</span><strong>Your Details</strong><small>Contact</small>
-                </button>
-                <button class="qurbani-step-nav" type="button" data-step-target="5" disabled>
-                    <span>6</span><strong>Review</strong><small>Submit</small>
+                    <span>5</span><strong>Review</strong><small>Submit</small>
                 </button>
             </aside>
 
@@ -56,121 +53,76 @@
                 <div class="qurbani-alert" id="qurbani-alert" role="alert" aria-live="polite"></div>
 
                 <section class="qurbani-wizard-step is-active" data-step="0" aria-labelledby="qurbani-step-1-title">
-                    <div class="qurbani-step-heading">
-                        <span>Step 1 of 6</span>
-                        <h2 id="qurbani-step-1-title">Select Animal / Package</h2>
-                        <p>Choose the package for this booking. PKR is shown as the main price.</p>
+                    <div class="qurbani-step-heading qurbani-step-heading-with-currency">
+                        <div>
+                            <span>Step 1 of 5</span>
+                            <h2 id="qurbani-step-1-title">Select Qurbani Type and Currency</h2>
+                            <p>Choose Waqf or Collection, then select the currency you want to view prices in.</p>
+                        </div>
+                        <div class="qurbani-currency-card">
+                            <label for="currency-select">Currency *</label>
+                            <select id="currency-select" name="currency"><option value="pkr" selected>PKR</option><option value="usd">USD</option><option value="gbp">GBP</option></select>
+                        </div>
                     </div>
-                    <div class="qurbani-package-grid" role="radiogroup" aria-label="Select animal or package">
-                        <label class="qurbani-choice-card qurbani-package-card">
-                            <input type="radio" name="qurbaniPackage" value="cow-share">
-                            <img class="qurbani-package-image" src="image/cow.jpg" alt="Cow">
-                            <strong>Cow Per Share</strong>
-                            <em>PKR 30,000</em>
-                            <small>USD 108 · GBP 85</small>
-                        </label>
-                        <label class="qurbani-choice-card qurbani-package-card">
-                            <input type="radio" name="qurbaniPackage" value="full-cow">
-                            <img class="qurbani-package-image" src="image/cow.jpg" alt="Full cow">
-                            <strong>Full Cow (7 Shares)</strong>
-                            <em>PKR 210,000</em>
-                            <small>USD 753 · GBP 590</small>
-                        </label>
-                        <label class="qurbani-choice-card qurbani-package-card">
-                            <input type="radio" name="qurbaniPackage" value="goat">
-                            <img class="qurbani-package-image" src="image/goat.jpg" alt="Goat">
-                            <strong>Goat</strong>
-                            <em>PKR 50,000</em>
-                            <small>USD 179 · GBP 140</small>
-                        </label>
+                    <div class="qurbani-step-one-grid">
+                        <div class="qurbani-step-one-top qurbani-step-one-sketch">
+                            <label class="qurbani-choice-card qurbani-type-card qurbani-waqf-students-card">
+                                <input type="radio" name="qurbaniType" value="waqf-students" checked>
+                                <strong>Waqf for Student of Institute</strong>
+                                <small>Donate meat for resident students.</small>
+                            </label>
+                            <label class="qurbani-choice-card qurbani-type-card qurbani-waqf-needy-card">
+                                <input type="radio" name="qurbaniType" value="waqf-needy">
+                                <strong>Waqf for Needy and Deserving</strong>
+                                <small>Donate meat for needy families.</small>
+                            </label>
+                            <label class="qurbani-choice-card qurbani-type-card qurbani-secondary-choice qurbani-collection-card">
+                                <input type="radio" name="qurbaniType" value="collection">
+                                <strong>Collection</strong>
+                                <small>Collect your Qurbani meat yourself.</small>
+                            </label>
+                        </div>
+                        <div class="qurbani-step-one-detail">
+                            <div class="qurbani-conditional-panel is-hidden" id="collection-options-panel">
+                                <div class="qurbani-collection-info">
+                                    <div>
+                                        <strong>Collection Address</strong>
+                                        <p>Institute of Islamic Sciences, Islamabad<br>Wadi-e-ilm, Toll Plaza, Main Murree Rd, Islamabad, Pakistan</p>
+                                        <a class="qurbani-location-btn" href="https://maps.app.goo.gl/HCaugQKfsREoEcRg7" target="_blank" rel="noopener">View Collection Location</a>
+                                    </div>
+                                    <iframe class="qurbani-map-frame" title="Institute of Islamic Sciences collection location" src="https://www.google.com/maps?q=Institute%20of%20Islamic%20Sciences%20Islamabad%20Wadi-e-ilm%20Toll%20Plaza%20Main%20Murree%20Rd%20Islamabad%20Pakistan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 <section class="qurbani-wizard-step" data-step="1" aria-labelledby="qurbani-step-2-title">
                     <div class="qurbani-step-heading">
-                        <span>Step 2 of 6</span>
-                        <h2 id="qurbani-step-2-title">Select Qurbani Type</h2>
-                        <p>Waqf is selected by default. Select Collection only if you want to collect the meat yourself.</p>
+                        <span>Step 2 of 5</span>
+                        <h2 id="qurbani-step-2-title">Select Animal / Package</h2>
+                        <p>Select one or more packages. Quantity controls appear under each selected package.</p>
                     </div>
-                    <div class="qurbani-type-grid" role="radiogroup" aria-label="Select Qurbani type">
-                        <label class="qurbani-choice-card qurbani-type-card">
-                            <input type="radio" name="qurbaniType" value="waqf" checked>
-                            <strong>Waqf (Donation)</strong>
-                            <small>Donate for students of the Institute or needy and deserving people.</small>
-                        </label>
-                        <label class="qurbani-choice-card qurbani-type-card qurbani-secondary-choice">
-                            <input type="radio" name="qurbaniType" value="collection">
-                            <strong>Collection</strong>
-                            <small>Collect your Qurbani meat from the Institute collection point.</small>
-                        </label>
-                    </div>
-                    <div class="qurbani-conditional-panel" id="waqf-options-panel">
-                        <label for="waqf-for">Select Waqf For *</label>
-                        <select id="waqf-for" name="waqfFor">
-                            <option value="Students of the Institute">Students of the Institute</option>
-                            <option value="Needy & Deserving">Needy & Deserving</option>
-                        </select>
-                    </div>
-                    <div class="qurbani-conditional-panel is-hidden" id="collection-options-panel">
-                        <div class="qurbani-collection-info">
-                            <div>
-                                <strong>Collection Address</strong>
-                                <p>Institute of Islamic Sciences, Islamabad<br>Wadi-e-ilm, Toll Plaza, Main Murree Rd, Islamabad, Pakistan</p>
-                                <a class="qurbani-location-btn" href="https://maps.app.goo.gl/HCaugQKfsREoEcRg7" target="_blank" rel="noopener">View Collection Location</a>
-                            </div>
-                            <iframe class="qurbani-map-frame" title="Institute of Islamic Sciences collection location" src="https://www.google.com/maps?q=Institute%20of%20Islamic%20Sciences%20Islamabad%20Wadi-e-ilm%20Toll%20Plaza%20Main%20Murree%20Rd%20Islamabad%20Pakistan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
+                    <div class="qurbani-package-grid qurbani-multi-package-grid" id="package-options-grid"></div>
+                    <div class="qurbani-package-total-card" id="package-selection-total">No packages selected yet.</div>
                 </section>
 
                 <section class="qurbani-wizard-step" data-step="2" aria-labelledby="qurbani-step-3-title">
                     <div class="qurbani-step-heading">
-                        <span>Step 3 of 6</span>
-                        <h2 id="qurbani-step-3-title">Select Quantity and View Pricing</h2>
-                        <p>Set the quantity first. The PKR total is the main amount; foreign currency totals stay compact.</p>
-                    </div>
-                    <div class="qurbani-pricing-layout">
-                        <div class="qurbani-quantity-card">
-                            <label for="quantity">Quantity *</label>
-                            <div class="qurbani-quantity-control">
-                                <button type="button" id="decrease-quantity" aria-label="Decrease quantity">−</button>
-                                <input type="number" id="quantity" name="quantity" min="1" value="1" inputmode="numeric">
-                                <button type="button" id="increase-quantity" aria-label="Increase quantity">+</button>
-                            </div>
-                        </div>
-                        <div class="qurbani-total-card" aria-live="polite">
-                            <span>Price per package</span>
-                            <strong id="price-pkr-display">PKR 0</strong>
-                            <div class="qurbani-foreign-price-pills" id="foreign-price-display"><span>USD 0</span><span>GBP 0</span></div>
-                            <hr>
-                            <div class="qurbani-total-heading"><span id="selected-total-label">Total PKR</span><label for="currency-select">Currency</label><select id="currency-select" name="currency"><option value="pkr" selected>PKR</option><option value="usd">USD</option><option value="gbp">GBP</option></select></div>
-                            <strong class="qurbani-main-total" id="total-pkr-display">PKR 0</strong>
-                            <button class="qurbani-currency-toggle" type="button" id="currency-toggle" aria-expanded="false">Show USD / GBP totals</button>
-                            <div class="qurbani-foreign-totals" id="foreign-totals" hidden>
-                                <span id="total-usd-display">USD 0</span>
-                                <span id="total-gbp-display">GBP 0</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="qurbani-wizard-step" data-step="3" aria-labelledby="qurbani-step-4-title">
-                    <div class="qurbani-step-heading">
-                        <span>Step 4 of 6</span>
-                        <h2 id="qurbani-step-4-title">Qurbani By</h2>
-                        <p>Enter the name that should be recorded for this Qurbani.</p>
+                        <span>Step 3 of 5</span>
+                        <h2 id="qurbani-step-3-title">Qurbani By</h2>
+                        <p>Enter Qurbani By and Income Source separately for each selected Qurbani.</p>
                     </div>
                     <div class="qurbani-added-items" id="added-items-panel">
                         <h3>Your Order Summary</h3>
                         <div id="added-items-list"></div>
                     </div>
-
                 </section>
 
-                <section class="qurbani-wizard-step" data-step="4" aria-labelledby="qurbani-step-5-title">
+                <section class="qurbani-wizard-step" data-step="3" aria-labelledby="qurbani-step-4-title">
                     <div class="qurbani-step-heading">
-                        <span>Step 5 of 6</span>
-                        <h2 id="qurbani-step-5-title">Personal Details</h2>
+                        <span>Step 4 of 5</span>
+                        <h2 id="qurbani-step-4-title">Personal Details</h2>
                         <p>Provide your contact information so the Institute can confirm your booking.</p>
                     </div>
                     <div class="qurbani-details-grid">
@@ -182,19 +134,19 @@
                     </div>
                 </section>
 
-                <section class="qurbani-wizard-step" data-step="5" aria-labelledby="qurbani-step-6-title">
+                <section class="qurbani-wizard-step" data-step="4" aria-labelledby="qurbani-step-5-title">
                     <div class="qurbani-step-heading">
-                        <span>Step 6 of 6</span>
-                        <h2 id="qurbani-step-6-title">Order Summary & Submit</h2>
+                        <span>Step 5 of 5</span>
+                        <h2 id="qurbani-step-5-title">Order Summary & Submit</h2>
                         <p>Review everything carefully. Submit only when the details are correct.</p>
                     </div>
                     <div class="qurbani-summary-card" id="order-summary"></div>
-                    <button type="submit" id="submit-order-btn" class="qurbani-submit-btn">Submit Qurbani Order</button>
                 </section>
 
                 <div class="qurbani-wizard-actions">
-                    <button type="button" class="qurbani-prev-btn" id="prev-step">Previous</button><button type="button" class="qurbani-choose-another-btn qurbani-action-choose" id="choose-another-item">Choose Another Animal</button>
+                    <button type="button" class="qurbani-prev-btn" id="prev-step">Previous</button>
                     <button type="button" class="qurbani-next-btn" id="next-step">Next</button>
+                    <button type="submit" id="submit-order-btn" class="qurbani-submit-btn">Submit Qurbani Order</button>
                 </div>
             </form>
         </section>
@@ -202,10 +154,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Institute of Islamic Sciences, Islamabad</p>
+            <p>&copy; 2026 Institute of Islamic Sciences, Islamabad</p>
             <p>Address: Institute of Islamic Sciences, Islamabad, Wadi-e-ilm, Toll Plaza, Main Murree Rd, Islamabad, Pakistan</p>
-            <p>Contact: 0336 5363 550 | 0321 5821 083</p>
-            <span class="footer-links"><a href="terms.html">Terms & Conditions</a> | <a href="privacy.html">Privacy Policy</a></span>
+            <p>Contact: <a class="whatsapp-contact" href="https://wa.me/923365363550" target="_blank" rel="noopener"><span class="whatsapp-icon" aria-hidden="true"></span>0336 5363 550</a> | <a class="whatsapp-contact" href="https://wa.me/923215821083" target="_blank" rel="noopener"><span class="whatsapp-icon" aria-hidden="true"></span>0321 5821 083</a></p>
+            <span class="footer-links"><a href="terms.html">Terms & Conditions</a> | <a href="privacy.html">Privacy Policy</a> | <a href="faq.html">FAQs</a></span>
         </div>
     </footer>
 
