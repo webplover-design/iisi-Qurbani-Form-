@@ -3728,3 +3728,7 @@ body {
     .hero-content { padding-bottom: 12rem; }
     .hero-image-wrap { bottom: -1.2rem; }
 }
+.webplover-credit { margin-top: 0.45rem; color: rgba(255, 255, 255, 0.82); font-size: 0.86rem; }
+.webplover-credit a { color: var(--gold-soft); font-weight: 900; text-decoration: none; }
+.webplover-credit a:hover { text-decoration: underline; }
+.qurbani-alert-bottom { margin-top: 1rem; }

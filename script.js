@@ -1,9 +1,9 @@
 ﻿const qurbaniPackages = [
-    { id: "waqf-cow-share-30000", type: "waqf", name: "Cow Per Share", pkr: 30000, image: "image/cow.jpg" },
-    { id: "waqf-cow-share-35000", type: "waqf", name: "Cow Per Share", pkr: 35000, image: "image/cow.jpg" },
+    { id: "waqf-cow-share-30000", type: "waqf", name: "Cow Per Share", pkr: 30000, image: "image/SHARE CAR.jpg" },
+    { id: "waqf-cow-share-35000", type: "waqf", name: "Cow Per Share", pkr: 35000, image: "image/SHARE CAR.jpg" },
     { id: "waqf-full-cow", type: "waqf", name: "Full Cow (7 Shares)", pkr: 210000, image: "image/cow.jpg" },
     { id: "waqf-goat", type: "waqf", name: "Goat", pkr: 50000, image: "image/goat.jpg" },
-    { id: "collection-cow-share-35000", type: "collection", name: "Cow Per Share", pkr: 35000, image: "image/cow.jpg" },
+    { id: "collection-cow-share-35000", type: "collection", name: "Cow Per Share", pkr: 35000, image: "image/SHARE CAR.jpg" },
     { id: "collection-full-cow", type: "collection", name: "Full Cow (7 Shares)", pkr: 210000, image: "image/cow.jpg" },
     { id: "collection-goat", type: "collection", name: "Goat", pkr: 50000, image: "image/goat.jpg" }
 ].map(packageData => ({ ...packageData, ...convertPkrPrice(packageData.pkr) }));
@@ -94,18 +94,19 @@ function loadTokenPage() {
     }
 
     const orderSummary = document.getElementById('token-order-summary');
+    const selectedCurrency = (orderData.currency || orderData.items?.[0]?.currency || 'pkr').toLowerCase();
+    const currencyLabel = selectedCurrency.toUpperCase();
+    const totalKey = selectedCurrency === 'usd' ? 'totalUsd' : selectedCurrency === 'gbp' ? 'totalGbp' : 'totalPkr';
     if (orderSummary) {
-        let html = '<table><thead><tr><th>Package</th><th>Type</th><th>Waqf / Collection</th><th>Income Source</th><th>Qurbani By</th><th>Total PKR</th><th>Total USD</th><th>Total GBP</th></tr></thead><tbody>';
+        let html = '<table><thead><tr><th>Package</th><th>Type</th><th>Waqf / Collection</th><th>Income Source</th><th>Qurbani By</th><th>Total ' + currencyLabel + '</th></tr></thead><tbody>';
         orderData.items.forEach(item => {
             html += '<tr>' +
                 '<td>' + escapeHtml(item.package) + '</td>' +
                 '<td>' + escapeHtml(item.type) + '</td>' +
+                '<td>' + escapeHtml(item.waqfFor || '-') + '</td>' +
                 '<td>' + escapeHtml(item.incomeSource || '-') + '</td>' +
                 '<td>' + escapeHtml(item.qurbaniBy) + '</td>' +
-                '<td>' + escapeHtml(item.quantity) + '</td>' +
-                '<td>' + escapeHtml(item.totalPkr) + '</td>' +
-                '<td>' + escapeHtml(item.totalUsd) + '</td>' +
-                '<td>' + escapeHtml(item.totalGbp) + '</td>' +
+                '<td>' + escapeHtml(item[totalKey]) + '</td>' +
                 '</tr>';
         });
         html += '</tbody></table>';
@@ -114,7 +115,7 @@ function loadTokenPage() {
 
     const whatsappLink = document.getElementById('whatsapp-link');
     const receiptWhatsappButton = document.getElementById('receipt-whatsapp-btn');
-    const orderLines = orderData.items.map(item => item.package + ' - ' + item.type + ' - Income Source: ' + (item.incomeSource || '-') + ' - Qty: ' + item.quantity + ' - Total PKR: ' + item.totalPkr).join('\n');
+    const orderLines = orderData.items.map(item => item.package + ' - ' + item.type + ' - ' + (item.waqfFor || '-') + ' - Qurbani By: ' + (item.qurbaniBy || '-') + ' - Income Source: ' + (item.incomeSource || '-') + ' - Total ' + currencyLabel + ': ' + item[totalKey]).join('\n');
     const whatsappMessage = 'Tracking ID: ' + orderData.trackingId + '\nCustomer Name: ' + orderData.fullName + '\nContact: ' + orderData.contactNumber + '\nAddress: ' + orderData.address + ', ' + orderData.city + ', ' + orderData.country + '\n\nOrder Details:\n' + orderLines + '\n\nI want to send my payment receipt for confirmation.';
     const whatsappHref = 'https://wa.me/923365363550?text=' + encodeURIComponent(whatsappMessage);
     if (whatsappLink) whatsappLink.href = whatsappHref;
@@ -189,6 +190,7 @@ function initQurbaniWizard() {
     const steps = Array.from(document.querySelectorAll('.qurbani-wizard-step'));
     const navButtons = Array.from(document.querySelectorAll('.qurbani-step-nav'));
     const alertBox = document.getElementById('qurbani-alert');
+    const bottomAlertBox = document.getElementById('qurbani-alert-bottom');
     const previousButton = document.getElementById('prev-step');
     const nextButton = document.getElementById('next-step');
     const collectionPanel = document.getElementById('collection-options-panel');
@@ -214,13 +216,22 @@ function initQurbaniWizard() {
     const formatSelectedTotal = totals => formatAmount(getSelectedCurrency().toUpperCase(), totals[getSelectedCurrency()]);
 
     const clearAlert = () => {
-        alertBox.textContent = '';
-        alertBox.classList.remove('is-visible');
+        [alertBox, bottomAlertBox].forEach(box => {
+            if (!box) return;
+            box.textContent = '';
+            box.classList.remove('is-visible');
+        });
     };
 
     const showAlert = message => {
-        alertBox.textContent = message;
-        alertBox.classList.add('is-visible');
+        if (alertBox) {
+            alertBox.textContent = message;
+            alertBox.classList.add('is-visible');
+        }
+        if (bottomAlertBox && currentStep === 2) {
+            bottomAlertBox.textContent = message;
+            bottomAlertBox.classList.add('is-visible');
+        }
     };
 
     const updateTypePanels = () => {
